@@ -1,2 +1,2 @@
 # Unsafe
-Unsafe methods for working unmanaged memory of memory pointers.
+Unsafe methods for working with unmanaged memory of memory pointers.
