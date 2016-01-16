@@ -1,1 +1,1 @@
- .\tools\ilasm.exe /dll /optimize .\il\DotNetCross.Memory.Unsafe.il /OUTPUT=.\build\DotNetCross.Memory.Unsafe.dll
+ .\tools\ilasm.exe /dll /optimize .\il\DotNetCross.Memory.Unsafe.il /OUTPUT=.\build\lib\DotNetCross.Memory.Unsafe.dll

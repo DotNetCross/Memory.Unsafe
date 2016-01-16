@@ -1,0 +1,1 @@
+.\tools\nuget push .\DotNetCross.Memory.Unsafe.dll.*.nupkg
