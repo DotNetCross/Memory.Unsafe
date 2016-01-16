@@ -1,0 +1,17 @@
+﻿{
+    "version": "1.0.0-*",
+
+    "compilationOptions": {
+        "allowUnsafe": true 
+
+    },
+
+    "dependencies": {
+        "Microsoft.NETCore.Runtime": "1.0.1-beta-*",
+        "System.Runtime": "4.0.21-beta-*"
+    },
+
+    "frameworks": {
+        "dnxcore50": { }
+    }
+}
