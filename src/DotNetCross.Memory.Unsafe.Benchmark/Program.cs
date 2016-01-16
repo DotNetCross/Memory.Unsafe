@@ -19,8 +19,8 @@ namespace DotNetCross.Memory.Benchmark
             //                    .AddDiagnoser(sourceDiagnoser)
             //                    .Build();
             var runner = new BenchmarkRunner();
-            //var reports = runner.Run<Program>();
-            var reports = runner.Run<BasicReadWriteBenchmarkByte>();
+            runner.Run<Program>();
+            //runner.Run<BasicReadWriteBenchmarkByte>();
             //    typeof(),
             //    typeof(BasicReadWriteBenchmark<short>),
             //    typeof(BasicReadWriteBenchmark<int>),
