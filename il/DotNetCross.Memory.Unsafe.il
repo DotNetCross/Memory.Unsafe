@@ -34,7 +34,7 @@
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
-.class public abstract auto ansi sealed beforefieldinit DotNetCross.Memory.Unsafe.Unsafe
+.class public abstract auto ansi sealed beforefieldinit DotNetCross.Memory.Unsafe
        extends [System.Runtime]System.Object
 {
   .method public hidebysig static !!T  Read<valuetype .ctor ([System.Runtime]System.ValueType) T>(void* p) cil managed aggressiveinlining
@@ -57,7 +57,7 @@
     ret  
     } // end of method Unsafe::Write
 
-} // end of class DotNetCross.Memory.Unsafe.Unsafe
+} // end of class DotNetCross.Memory.Unsafe
 
 
 // =============================================================

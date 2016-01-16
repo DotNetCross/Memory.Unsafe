@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace DotNetCross.Memory.Unsafe
+namespace DotNetCross.Memory
 {
     // NOTE: Code here only guide the generation of IL, that is edited by hand
     public static class Unsafe
