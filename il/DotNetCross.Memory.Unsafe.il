@@ -39,22 +39,23 @@
 {
   .method public hidebysig static !!T  Read<valuetype .ctor ([System.Runtime]System.ValueType) T>(void* p) cil managed aggressiveinlining
   {
-    // Code size       10 (0xa)
-    .maxstack  1
-    .locals init ([0] !!T V_0)
-    IL_0000:  ldloca.s   V_0
-    IL_0002:  initobj    !!T
-    IL_0008:  ldloc.0
-    IL_0009:  ret
+    // Can't be expressed in C#, thus in IL:
+    .maxstack 1
+    ldarg.0
+    ldobj !!T
+    ret
   } // end of method Unsafe::Read
 
   .method public hidebysig static void  Write<valuetype .ctor ([System.Runtime]System.ValueType) T>(void* p,
                                                                                                     !!T 'value') cil managed aggressiveinlining
   {
-    // Code size       1 (0x1)
-    .maxstack  8
-    IL_0000:  ret
-  } // end of method Unsafe::Write
+    // Can't be expressed in C#, thus in IL:
+    .maxstack 2
+    ldarg.0
+    ldarg.1
+    stobj !!T
+    ret  
+    } // end of method Unsafe::Write
 
 } // end of class DotNetCross.Memory.Unsafe.Unsafe
 
