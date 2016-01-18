@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>DotNetCross.Memory.Unsafe.dll</id>
-    <version>0.1.1-alpha</version>
+    <version>0.1.2-alpha</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Removed generic value type constraint.</releaseNotes>
+    <releaseNotes>Added unsafe SizeOf.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>unmanaged pointer pointers generic</tags>
   </metadata>

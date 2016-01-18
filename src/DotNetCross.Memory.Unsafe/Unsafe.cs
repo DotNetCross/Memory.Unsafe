@@ -15,5 +15,9 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe void Write<T>(void* p, T value)
         { }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int SizeOf<T>()
+        { return 0; }
     }
 }
