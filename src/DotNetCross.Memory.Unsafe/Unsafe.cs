@@ -17,7 +17,11 @@ namespace DotNetCross.Memory
         { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int SizeOf<T>()
+        public static unsafe void* AddressOf<T>(ref T value)
+        { return (void*)0; }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe int SizeOf<T>()
         { return 0; }
     }
 }
