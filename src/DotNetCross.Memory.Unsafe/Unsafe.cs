@@ -8,14 +8,12 @@ namespace DotNetCross.Memory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe T Read<T>(void* p)
-            where T : struct
         {
             return default(T);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe void Write<T>(void* p, T value)
-            where T : struct
         { }
     }
 }

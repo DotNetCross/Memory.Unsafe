@@ -40,7 +40,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DotNetCross.Memory.Unsafe">
-      <HintPath>..\..\build\DotNetCross.Memory.Unsafe.dll</HintPath>
+      <HintPath>..\..\build\lib\DotNetCross.Memory.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
