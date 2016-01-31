@@ -32,18 +32,18 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 36 2E 30 00 00 )             // ...0.1.6.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 37 2E 30 00 00 )             // ...0.1.7.0..
   .hash algorithm 0x00008004
-  .ver 0:1:6:0
+  .ver 0:1:7:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {2667BA4D-8377-4A80-8188-536C10522065}
+// MVID: {A8716A6A-577F-4E8C-B3DE-5F831A246188}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x00890000
+// Image base: 0x00C00000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================

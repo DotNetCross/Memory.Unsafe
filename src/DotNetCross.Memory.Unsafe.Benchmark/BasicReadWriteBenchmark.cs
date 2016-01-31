@@ -23,8 +23,8 @@ namespace DotNetCross.Memory.Benchmark
         {
             unsafe
             {
-                var stackPtr = stackalloc byte[Marshal.SizeOf<T>()];
-                var value = Unsafe.Read<T>(stackPtr);
+                //var stackPtr = stackalloc byte[Marshal.SizeOf<T>()];
+                //var value = Unsafe.Read<T>(stackPtr);
             }
         }
 
@@ -34,8 +34,8 @@ namespace DotNetCross.Memory.Benchmark
         {
             unsafe
             {
-                var stackPtr = stackalloc byte[Marshal.SizeOf<T>()];
-                Unsafe.Write<T>(stackPtr, default(T));
+                //var stackPtr = stackalloc byte[Marshal.SizeOf<T>()];
+                //Unsafe.Write<T>(stackPtr, default(T));
             }
         }
     }

@@ -39,9 +39,6 @@
       <HintPath>..\packages\BenchmarkDotNet.0.8.2\lib\net40\BenchmarkDotNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DotNetCross.Memory.Unsafe">
-      <HintPath>..\packages\DotNetCross.Memory.Unsafe.dll.0.1.3-alpha\lib\DotNetCross.Memory.Unsafe.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>

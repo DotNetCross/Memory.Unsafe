@@ -31,9 +31,9 @@ namespace DotNetCross.Memory.Benchmark
 
         public unsafe void StackAlloc()
         {
-            var ptr = stackalloc byte[128];
-            ptr += 3;
-            var value = Unsafe.Read<double>(ptr);
+            //var ptr = stackalloc byte[128];
+            //ptr += 3;
+            //var value = Unsafe.Read<double>(ptr);
         }
 
         [Benchmark]
