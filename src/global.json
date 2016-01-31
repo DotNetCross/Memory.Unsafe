@@ -1,5 +1,6 @@
 {
-  "projects": [
-    "wrap"
-  ]
+    "projects":[
+        "DotNetCross.Memory.Unsafe",
+        "DotNetCross.Memory.Unsafe.UnitTests",
+    ]
 }
