@@ -2,18 +2,23 @@
 <package >
   <metadata>
     <id>DotNetCross.Memory.Unsafe.dll</id>
-    <version>0.1.5-alpha</version>
+    <version>0.1.6-alpha</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Rearranged and added more target frameworks.</releaseNotes>
+    <releaseNotes>Fixed bad IL image.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
-     <group targetFramework="dotnet" />
+      <group targetFramework="net11" />
+      <group targetFramework="dotnet" />
+      <group targetFramework="netcore" />
+      <group targetFramework="dnxcore" />
+      <group targetFramework="netstandard" />
+      <group targetFramework="portable-net40+win8+sl4+wp7" />
     </dependencies>
   </metadata>
 </package>

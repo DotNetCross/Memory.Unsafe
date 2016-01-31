@@ -8,13 +8,21 @@
     "dependencies": {
         "DotNetCross.Memory.Unsafe.dll": "0.1.5-alpha",
         "Microsoft.NETCore.Runtime": "1.0.1-beta-*",
-        "System.Runtime": "4.0.21-rc2-23706",
+        "System.Runtime": "4.0.21-beta-23516",
         "xunit": "2.1.0",
-        "xunit.runner.dnx": "2.1.0-rc1-build204"
     },
 
     "frameworks": {
-        "dnxcore50": { }
+        "dnxcore50": {
+            "dependencies": {
+                "xunit.runner.dnx": "2.1.0-rc1-build204"
+            }
+        },
+        "netcore50": {
+            "dependencies": {
+                "xunit.runner.console": "2.1.0"
+            }
+        }
     },
 
     "commands": {

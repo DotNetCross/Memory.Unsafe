@@ -10,11 +10,6 @@
   .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
   .ver 4:0:21:0
 }
-.assembly extern System.Runtime.InteropServices
-{
-  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-  .ver 4:0:21:0
-}
 .assembly DotNetCross.Memory.Unsafe
 {
   .custom instance void [System.Runtime]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
@@ -37,22 +32,18 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Runtime.InteropServices.ComVisibleAttribute::.ctor(bool) = ( 01 00 00 00 00 ) 
-  .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 33 33 35 66 66 65 63 35 2D 31 39 38 32   // ..$335ffec5-1982
-                                                                                                                        2D 34 62 32 33 2D 61 33 64 62 2D 37 31 65 61 63   // -4b23-a3db-71eac
-                                                                                                                        63 66 65 31 38 65 36 00 00 )                      // cfe18e6..
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 34 2E 30 00 00 )             // ...0.1.5.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 36 2E 30 00 00 )             // ...0.1.6.0..
   .hash algorithm 0x00008004
-  .ver 0:1:5:0
+  .ver 0:1:6:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {52496C5D-5358-444E-B3CC-C6AD4CBE2EBB}
+// MVID: {2667BA4D-8377-4A80-8188-536C10522065}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x00D50000
+// Image base: 0x00890000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
