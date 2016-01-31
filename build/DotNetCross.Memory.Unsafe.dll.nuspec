@@ -2,15 +2,18 @@
 <package >
   <metadata>
     <id>DotNetCross.Memory.Unsafe.dll</id>
-    <version>0.1.3-alpha</version>
+    <version>0.1.4-alpha</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Added unsafe AddressOf.</releaseNotes>
+    <releaseNotes>Added InitBlock (initblk) and CopyBlock (cpblk).</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>unmanaged pointer pointers generic</tags>
+    <dependencies>
+     <group targetFramework="dotnet" />
+    </dependencies>
   </metadata>
 </package>

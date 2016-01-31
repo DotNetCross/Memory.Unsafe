@@ -7,6 +7,15 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotNetCross.Memory.Unsafe",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Benchmark", "DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Benchmark.csproj", "{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotNetCross.Memory.Unsafe.UnitTests", "DotNetCross.Memory.Unsafe.UnitTests\DotNetCross.Memory.Unsafe.UnitTests.xproj", "{2E86AFF9-7EBC-491E-A178-2C73403836ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotCross.Memory.Unsafe", "DotCross.Memory.Unsafe", "{813110EC-26A8-4273-A22F-EBE8507834AF}"
+	ProjectSection(SolutionItems) = preProject
+		..\il\DotNetCross.Memory.Unsafe.BASE.il = ..\il\DotNetCross.Memory.Unsafe.BASE.il
+		..\build\DotNetCross.Memory.Unsafe.dll.nuspec = ..\build\DotNetCross.Memory.Unsafe.dll.nuspec
+		..\il\DotNetCross.Memory.Unsafe.il = ..\il\DotNetCross.Memory.Unsafe.il
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +30,10 @@ Global
 		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E86AFF9-7EBC-491E-A178-2C73403836ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E86AFF9-7EBC-491E-A178-2C73403836ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E86AFF9-7EBC-491E-A178-2C73403836ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E86AFF9-7EBC-491E-A178-2C73403836ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

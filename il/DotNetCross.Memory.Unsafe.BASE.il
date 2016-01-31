@@ -46,13 +46,13 @@
   .ver 0:1:4:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {9400C8FF-C5EB-43CB-9EFC-FA0A6CF40856}
+// MVID: {52496C5D-5358-444E-B3CC-C6AD4CBE2EBB}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x00930000
+// Image base: 0x00D50000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -62,56 +62,56 @@
 {
   .method public hidebysig static !!T  Read<T>(void* p) cil managed aggressiveinlining
   {
+    // Code size       10 (0xa)
     .maxstack  1
-    ldarg.0
-    ldobj !!T
-    ret
+    .locals init ([0] !!T V_0)
+    IL_0000:  ldloca.s   V_0
+    IL_0002:  initobj    !!T
+    IL_0008:  ldloc.0
+    IL_0009:  ret
   } // end of method Unsafe::Read
 
   .method public hidebysig static void  Write<T>(void* p,
                                                  !!T 'value') cil managed aggressiveinlining
   {
-    .maxstack  2
-    ldarg.0
-    ldarg.1
-    stobj !!T
-    ret  
-    } // end of method Unsafe::Write
+    // Code size       1 (0x1)
+    .maxstack  8
+    IL_0000:  ret
+  } // end of method Unsafe::Write
+
   .method public hidebysig static void*  AddressOf<T>(!!T& 'value') cil managed aggressiveinlining
   {
-    .maxstack  1
-    ldarg.0
+    // Code size       3 (0x3)
+    .maxstack  8
+    IL_0000:  ldc.i4.0
+    IL_0001:  conv.i
     IL_0002:  ret
   } // end of method Unsafe::AddressOf
 
   .method public hidebysig static int32  SizeOf<T>() cil managed aggressiveinlining
   {
-    sizeof !!T
-    ret
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  ldc.i4.0
+    IL_0001:  ret
   } // end of method Unsafe::SizeOf
 
   .method public hidebysig static void  InitBlock(void* dst,
                                                   uint8 initValue,
                                                   uint32 size) cil managed aggressiveinlining
   {
-    .maxstack  3
-    ldarg.0
-    ldarg.1
-    ldarg.2
-    initblk
-    ret
+    // Code size       1 (0x1)
+    .maxstack  8
+    IL_0000:  ret
   } // end of method Unsafe::InitBlock
 
   .method public hidebysig static void  CopyBlock(void* dst,
                                                   void* src,
                                                   uint32 size) cil managed aggressiveinlining
   {
-    .maxstack  3
-    ldarg.0
-    ldarg.1
-    ldarg.2
-    cpblk
-    ret
+    // Code size       1 (0x1)
+    .maxstack  8
+    IL_0000:  ret
   } // end of method Unsafe::CopyBlock
 
 } // end of class DotNetCross.Memory.Unsafe
@@ -120,4 +120,4 @@
 // =============================================================
 
 // *********** DISASSEMBLY COMPLETE ***********************
-// WARNING: Created Win32 resource file .\il\DotNetCross.Memory.Unsafe.res
+// WARNING: Created Win32 resource file .\il\DotNetCross.Memory.Unsafe.BASE.res

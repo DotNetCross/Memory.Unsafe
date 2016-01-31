@@ -23,5 +23,19 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe int SizeOf<T>()
         { return 0; }
+
+        /// <summary>
+        /// https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.initblk.aspx
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe void InitBlock(void* dst, byte initValue, uint size)
+        { }
+
+        /// <summary>
+        /// https://msdn.microsoft.com/en-us/library/system.reflection.emit.opcodes.cpblk.aspx
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe void CopyBlock(void* dst, void* src, uint size)
+        { }
     }
 }
