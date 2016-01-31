@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Added InitBlock (initblk) and CopyBlock (cpblk).</releaseNotes>
+    <releaseNotes>Rearranged and added more target frameworks.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
