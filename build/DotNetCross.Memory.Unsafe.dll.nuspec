@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>DotNetCross.Memory.Unsafe.dll</id>
-    <version>0.1.4-alpha</version>
+    <version>0.1.5-alpha</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>

@@ -11,9 +11,14 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotNetCross.Memory.Unsafe.U
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotCross.Memory.Unsafe", "DotCross.Memory.Unsafe", "{813110EC-26A8-4273-A22F-EBE8507834AF}"
 	ProjectSection(SolutionItems) = preProject
+		..\AssembleRewrittenIL.bat = ..\AssembleRewrittenIL.bat
+		..\BuildBase.bat = ..\BuildBase.bat
+		..\DisassembleBase.bat = ..\DisassembleBase.bat
 		..\il\DotNetCross.Memory.Unsafe.BASE.il = ..\il\DotNetCross.Memory.Unsafe.BASE.il
 		..\build\DotNetCross.Memory.Unsafe.dll.nuspec = ..\build\DotNetCross.Memory.Unsafe.dll.nuspec
 		..\il\DotNetCross.Memory.Unsafe.il = ..\il\DotNetCross.Memory.Unsafe.il
+		..\NugetPack.bat = ..\NugetPack.bat
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Global

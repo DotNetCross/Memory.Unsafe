@@ -41,9 +41,9 @@
   .custom instance void [System.Runtime.InteropServices]System.Runtime.InteropServices.GuidAttribute::.ctor(string) = ( 01 00 24 33 33 35 66 66 65 63 35 2D 31 39 38 32   // ..$335ffec5-1982
                                                                                                                         2D 34 62 32 33 2D 61 33 64 62 2D 37 31 65 61 63   // -4b23-a3db-71eac
                                                                                                                         63 66 65 31 38 65 36 00 00 )                      // cfe18e6..
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 34 2E 30 00 00 )             // ...0.1.4.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 34 2E 30 00 00 )             // ...0.1.5.0..
   .hash algorithm 0x00008004
-  .ver 0:1:4:0
+  .ver 0:1:5:0
 }
 .module DotNetCross.Memory.Unsafe.dll
 // MVID: {52496C5D-5358-444E-B3CC-C6AD4CBE2EBB}

@@ -1,1 +1,2 @@
- .\tools\ilasm.exe /dll /optimize /stripreloc .\il\DotNetCross.Memory.Unsafe.il /OUTPUT=.\build\lib\DotNetCross.Memory.Unsafe.dll
+.\tools\ilasm.exe /dll /optimize /stripreloc .\il\DotNetCross.Memory.Unsafe.il /OUTPUT=.\build\lib\dotnet\DotNetCross.Memory.Unsafe.dll
+xcopy /Y .\build\lib\dotnet\DotNetCross.Memory.Unsafe.dll .\build\lib\portable-win8+net45+wp8\DotNetCross.Memory.Unsafe.dll
