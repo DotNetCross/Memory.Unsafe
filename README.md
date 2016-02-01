@@ -1,5 +1,5 @@
 # Unsafe
-Unsafe methods for working with pointers and unmanaged memory pointers.
+Unsafe methods for working with pointers and unmanaged memory.
 
 ```csharp
 public static class Unsafe
