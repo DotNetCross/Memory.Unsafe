@@ -8,7 +8,7 @@
 .assembly extern System.Runtime
 {
   .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-  .ver 4:0:21:0
+  .ver 4:0:0:0
 }
 .assembly DotNetCross.Memory.Unsafe
 {
@@ -32,18 +32,18 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 38 2E 30 00 00 )             // ...0.1.8.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 39 2E 30 00 00 )             // ...0.1.9.0..
   .hash algorithm 0x00008004
-  .ver 0:1:8:0
+  .ver 0:1:9:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {18AAF224-874E-41CF-A47B-EBCE5106803D}
+// MVID: {70B67DAB-F93A-4C3F-9BED-49121A1E9D10}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x014F0000
+// Image base: 0x01590000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -74,32 +74,20 @@
     sizeof !!T
     ret
   } // end of method Unsafe::SizeOf
-  .method public hidebysig static void*  AddressOf<T>(!!T& 'value') cil managed aggressiveinlining
+
+  .method public hidebysig static !!T  As<T>(object obj) cil managed aggressiveinlining
   {
     .maxstack  1
     ldarg.0
     ret
-  } // end of method Unsafe::AddressOf
+  } // end of method Unsafe::As
 
-  .method public hidebysig static valuetype DotNetCross.Memory.ValueCaster`1<!!T> 
-          Cast<valuetype .ctor ([System.Runtime]System.ValueType) T>(!!T 'value') cil managed aggressiveinlining
+  .method public hidebysig static void*  AsPointer<T>(!!T& 'value') cil managed aggressiveinlining
   {
-    // Code size       7 (0x7)
     .maxstack  1
-    IL_0000:  ldarg.0
-    IL_0001:  newobj     instance void valuetype DotNetCross.Memory.ValueCaster`1<!!T>::.ctor(!0)
-    IL_0006:  ret
-  } // end of method Unsafe::Cast
-
-  .method public hidebysig static valuetype DotNetCross.Memory.ReferenceCaster 
-          Cast(object obj) cil managed aggressiveinlining
-  {
-    // Code size       7 (0x7)
-    .maxstack  1
-    IL_0000:  ldarg.0
-    IL_0001:  newobj     instance void DotNetCross.Memory.ReferenceCaster::.ctor(object)
-    IL_0006:  ret
-  } // end of method Unsafe::Cast
+    ldarg.0
+    ret
+  } // end of method Unsafe::AsPointer
 
   .method public hidebysig static void  InitBlock(void* dst,
                                                   uint8 initValue,
@@ -142,64 +130,6 @@
   } // end of method Pinnable::.ctor
 
 } // end of class DotNetCross.Memory.Pinnable
-
-.class public sequential ansi sealed beforefieldinit DotNetCross.Memory.ValueCaster`1<valuetype .ctor ([System.Runtime]System.ValueType) T>
-       extends [System.Runtime]System.ValueType
-{
-  .field public initonly !T Value
-  .method public hidebysig specialname rtspecialname 
-          instance void  .ctor(!T 'value') cil managed aggressiveinlining
-  {
-    // Code size       8 (0x8)
-    .maxstack  8
-    IL_0000:  ldarg.0
-    IL_0001:  ldarg.1
-    IL_0002:  stfld      !0 valuetype DotNetCross.Memory.ValueCaster`1<!T>::Value
-    IL_0007:  ret
-  } // end of method ValueCaster`1::.ctor
-
-  .method public hidebysig instance !!TTo 
-          To<valuetype .ctor ([System.Runtime]System.ValueType) TTo>() cil managed aggressiveinlining
-  {
-    .maxstack  1
-    ldarg.0
-    ret
-  } // end of method ValueCaster`1::To
-
-} // end of class DotNetCross.Memory.ValueCaster`1
-
-.class public sequential ansi sealed beforefieldinit DotNetCross.Memory.ReferenceCaster
-       extends [System.Runtime]System.ValueType
-{
-  .field public initonly object Object
-  .method public hidebysig specialname rtspecialname 
-          instance void  .ctor(object obj) cil managed aggressiveinlining
-  {
-    // Code size       8 (0x8)
-    .maxstack  8
-    IL_0000:  ldarg.0
-    IL_0001:  ldarg.1
-    IL_0002:  stfld      object DotNetCross.Memory.ReferenceCaster::Object
-    IL_0007:  ret
-  } // end of method ReferenceCaster::.ctor
-
-  .method public hidebysig instance !!TTo 
-          To<class TTo>() cil managed aggressiveinlining
-  {
-    .maxstack  1
-    ldarg.0
-    ret
-  } // end of method ReferenceCaster::To
-
-  .method public hidebysig instance class DotNetCross.Memory.Pinnable 
-          ToPinnable() cil managed aggressiveinlining
-  {
-    .maxstack  1
-    ldarg.0
-    ret
-  } // end of method ReferenceCaster::ToPinnable
-
-} // end of class DotNetCross.Memory.ReferenceCaster
 
 
 // =============================================================

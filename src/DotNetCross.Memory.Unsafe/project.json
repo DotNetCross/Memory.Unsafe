@@ -1,13 +1,13 @@
 ﻿{
-    "version": "0.1.8-alpha",
+    "version": "0.1.9-alpha",
 
     "compilationOptions": {
         "allowUnsafe": true
     },
 
     "dependencies": {
-        "Microsoft.NETCore.Runtime": "1.0.1-beta-*",
-        "System.Runtime": "4.0.21-beta-23516"
+        "Microsoft.NETCore.Runtime": "1.0.0",
+        "System.Runtime": "4.0.0"
     },
 
     "frameworks": {

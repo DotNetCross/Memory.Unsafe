@@ -2,15 +2,15 @@
 
 namespace DotNetCross.Memory.UnitTests
 {
-    public class Unsafe_AddressOf_Test
+    public class Unsafe_AsPointer_Test
     {
         [Fact]
         public unsafe void Int()
         {
             var ptr = stackalloc int[1];
             *ptr = 42;
-            var addressOf = Unsafe.AddressOf<int>(ref *ptr);
-            Assert.True(ptr == addressOf);
+            var actualPtr = Unsafe.AsPointer<int>(ref *ptr);
+            Assert.True(ptr == actualPtr);
         }
 
         [Fact]
@@ -18,8 +18,8 @@ namespace DotNetCross.Memory.UnitTests
         {
             var ptr = stackalloc double[1];
             *ptr = 42;
-            var addressOf = Unsafe.AddressOf<double>(ref *ptr);
-            Assert.True(ptr == addressOf);
+            var actualPtr = Unsafe.AsPointer<double>(ref *ptr);
+            Assert.True(ptr == actualPtr);
         }
     }
 }
