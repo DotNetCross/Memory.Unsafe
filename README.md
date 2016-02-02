@@ -1,66 +1,46 @@
 # Unsafe
-Unsafe methods for working with pointers and unmanaged memory.
-
-```csharp
-public static class Unsafe
-{
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static unsafe T Read<T>(void* p)
-    {
-        .maxstack  1
-        ldarg.0
-        ldobj !!T
-        ret
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static unsafe void Write<T>(void* p, T value)
-    {
-        .maxstack  2
-        ldarg.0
-        ldarg.1
-        stobj !!T
-        ret  
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static unsafe void* AddressOf<T>(ref T value)
-    {
-        .maxstack  1
-        ldarg.0
-        ret
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static unsafe int SizeOf<T>()
-    {
-        sizeof !!T
-        ret
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static unsafe void InitBlock(void* dst, byte initValue, uint size)
-    {
-        .maxstack  3
-        ldarg.0
-        ldarg.1
-        ldarg.2
-        initblk
-        ret
-    }
-
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static unsafe void CopyBlock(void* dst, void* src, uint size)
-    {
-        .maxstack  3
-        ldarg.0
-        ldarg.1
-        ldarg.2
-        cpblk
-        ret
-    }
-}
-```
+Unsafe methods for working with pointers and unmanaged memory in a completely generic not-type-safe way.
 
 ## NuGet
 https://www.nuget.org/packages/DotNetCross.Memory.Unsafe.dll/
+
+## API
+API surface currently, no doubt this will change until a stable API has been determined.
+```csharp
+public static class Unsafe
+{
+    public static unsafe T Read<T>(void* p)
+    public static unsafe void Write<T>(void* p, T value)
+    public static unsafe int SizeOf<T>()
+    public static T As<T>(object obj)
+    public static unsafe void* AsPointer<T>(ref T value)
+    public static unsafe void InitBlock(void* dst, byte initValue, uint size)
+    public static unsafe void CopyBlock(void* dst, void* src, uint size)
+}
+public class Pinnable
+{
+    public byte Pin;
+}
+```
+
+## Examples
+### Read
+```csharp
+var ptr = stackalloc int[1];
+*ptr = 42;
+var v = Unsafe.Read<int>(ptr);
+Assert.Equal(42, v);
+```
+
+### Write
+```csharp
+var ptr = stackalloc int[1];
+*ptr = 17;
+Unsafe.Write<int>(ptr, 42);
+Assert.Equal(42, ptr[0]);
+```
+
+### SizeOf
+```csharp
+var size = Unsafe.SizeOf<T>();
+```
