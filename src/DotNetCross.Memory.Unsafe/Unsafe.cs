@@ -15,7 +15,8 @@ namespace DotNetCross.Memory
         public static unsafe int SizeOf<T>() { return 0; } // Overridden in IL
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T As<T>(object obj) { return default(T); } // Overridden in IL
+        public static T As<T>(object obj) where T : class
+        { return default(T); } // Overridden in IL
 
         // Instead of AddressOf
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -39,7 +40,7 @@ namespace DotNetCross.Memory
         public static unsafe void CopyBlock(void* dst, void* src, uint size) { }
     }
 
-    public class Pinnable
+    public sealed class Pinnable
     {
         public byte Pin;
     }

@@ -32,18 +32,18 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 31 2E 39 2E 30 00 00 )             // ...0.1.9.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 30 2E 30 00 00 )             // ...0.2.0.0..
   .hash algorithm 0x00008004
-  .ver 0:1:9:0
+  .ver 0:2:0:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {70B67DAB-F93A-4C3F-9BED-49121A1E9D10}
+// MVID: {B87A9616-91DD-4DC6-A4FC-3217D05362CD}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x01590000
+// Image base: 0x01440000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -75,7 +75,7 @@
     ret
   } // end of method Unsafe::SizeOf
 
-  .method public hidebysig static !!T  As<T>(object obj) cil managed aggressiveinlining
+  .method public hidebysig static !!T  As<class T>(object obj) cil managed aggressiveinlining
   {
     .maxstack  1
     ldarg.0
@@ -115,7 +115,7 @@
 
 } // end of class DotNetCross.Memory.Unsafe
 
-.class public auto ansi beforefieldinit DotNetCross.Memory.Pinnable
+.class public auto ansi sealed beforefieldinit DotNetCross.Memory.Pinnable
        extends [System.Runtime]System.Object
 {
   .field public uint8 Pin
