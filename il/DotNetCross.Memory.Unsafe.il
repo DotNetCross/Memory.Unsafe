@@ -32,9 +32,9 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 30 2E 30 00 00 )             // ...0.2.0.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 31 2E 30 00 00 )             // ...0.2.1.0..
   .hash algorithm 0x00008004
-  .ver 0:2:0:0
+  .ver 0:2:1:0
 }
 .module DotNetCross.Memory.Unsafe.dll
 // MVID: {B87A9616-91DD-4DC6-A4FC-3217D05362CD}
@@ -43,7 +43,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x01440000
+// Image base: 0x01320000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -86,6 +86,7 @@
   {
     .maxstack  1
     ldarg.0
+    conv.u
     ret
   } // end of method Unsafe::AsPointer
 
