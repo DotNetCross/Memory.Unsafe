@@ -11,6 +11,7 @@ public static class Unsafe
 {
     public static unsafe T Read<T>(void* p)
     public static unsafe void Write<T>(void* p, T value)
+    public static unsafe void Write<T>(void* p, ref T value)
     public static unsafe int SizeOf<T>()
     public static T As<T>(object obj)
     public static unsafe void* AsPointer<T>(ref T value)
