@@ -5,6 +5,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using BenchmarkDotNet;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
 
 namespace DotNetCross.Memory.Benchmark
 {
@@ -18,29 +20,8 @@ namespace DotNetCross.Memory.Benchmark
             //                    .AddLogger(logger)
             //                    .AddDiagnoser(sourceDiagnoser)
             //                    .Build();
-            var runner = new BenchmarkRunner();
-            runner.Run<Program>();
-            //runner.Run<BasicReadWriteBenchmarkByte>();
-            //    typeof(),
-            //    typeof(BasicReadWriteBenchmark<short>),
-            //    typeof(BasicReadWriteBenchmark<int>),
-            //    typeof(BasicReadWriteBenchmark<long>),
-            //    typeof(BasicReadWriteBenchmark<float>),
-            //    typeof(BasicReadWriteBenchmark<double>)
-        }
-
-        public unsafe void StackAlloc()
-        {
-            //var ptr = stackalloc byte[128];
-            //ptr += 3;
-            //var value = Unsafe.Read<double>(ptr);
-        }
-
-        [Benchmark]
-        public void Test()
-        {
-            var a = 42 + 17;
-            ++a;
+            BenchmarkRunner.Run<BasicReadWriteBenchmarkShort>();
+            BenchmarkRunner.Run<BasicReadWriteBenchmarkInt>();
         }
     }
 }

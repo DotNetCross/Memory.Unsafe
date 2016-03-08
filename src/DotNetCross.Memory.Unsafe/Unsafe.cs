@@ -12,6 +12,13 @@ namespace DotNetCross.Memory
         public static unsafe void Write<T>(void* p, T value) { } // Overridden in IL
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe void Write<T>(void* p, ref T value) { } // Overridden in IL
+
+        // TODO: Remove again
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe void Write(byte* p, ref byte value) { *p = value; } // Overridden in IL
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe int SizeOf<T>() { return 0; } // Overridden in IL
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

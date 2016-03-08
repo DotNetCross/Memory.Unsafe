@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using BenchmarkDotNet;
-using BenchmarkDotNet.Tasks;
+using BenchmarkDotNet.Attributes;
 using DotNetCross.Memory;
 
 
@@ -23,8 +23,8 @@ namespace DotNetCross.Memory.Benchmark
         {
             unsafe
             {
-                //var stackPtr = stackalloc byte[Marshal.SizeOf<T>()];
-                //var value = Unsafe.Read<T>(stackPtr);
+                var stackPtr = stackalloc byte[Unsafe.SizeOf<T>()];
+                var value = Unsafe.Read<T>(stackPtr);
             }
         }
 
@@ -34,11 +34,13 @@ namespace DotNetCross.Memory.Benchmark
         {
             unsafe
             {
-                //var stackPtr = stackalloc byte[Marshal.SizeOf<T>()];
-                //Unsafe.Write<T>(stackPtr, default(T));
+                var stackPtr = stackalloc byte[Unsafe.SizeOf<T>()];
+                Unsafe.Write<T>(stackPtr, default(T));
             }
         }
     }
 
     public class BasicReadWriteBenchmarkByte : BasicReadWriteBenchmark<byte> { }
+    public class BasicReadWriteBenchmarkShort : BasicReadWriteBenchmark<short> { }
+    public class BasicReadWriteBenchmarkInt : BasicReadWriteBenchmark<int> { }
 }
