@@ -14,8 +14,15 @@ namespace DotNetCross.Memory.Benchmark
     {
         static void Main(string[] args)
         {
-            BenchmarkRunner.Run<BasicReadWriteBenchmarkShort>();
+            //BenchmarkRunner.Run<BasicReadWriteBenchmarkShort>();
             BenchmarkRunner.Run<BasicReadWriteBenchmarkBgr>();
+            //var b = new BasicReadWriteBenchmarkBgr();
+            //for (int i = 0; i < 1000; i++)
+            //{
+            //    b.ReadFromStack();
+            //    b.WriteToStack();
+            //    b.WriteRefToStack();
+            //}
         }
     }
 }
