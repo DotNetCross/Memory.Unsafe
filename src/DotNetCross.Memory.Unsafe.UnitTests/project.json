@@ -6,9 +6,9 @@
     },
 
     "dependencies": {
-        "DotNetCross.Memory.Unsafe.dll": "0.2.1",
+        "DotNetCross.Memory.Unsafe.dll": "0.2.2",
         "Microsoft.NETCore.Runtime": "1.0.1-beta-23516",
-        "System.Runtime": "4.0.20",
+        "System.Runtime": "4.0.21-beta-23516",
         "xunit": "2.2.0-beta1-build3239",
         "xunit.runner.console": "2.2.0-beta1-build3239"
     },

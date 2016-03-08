@@ -14,14 +14,8 @@ namespace DotNetCross.Memory.Benchmark
     {
         static void Main(string[] args)
         {
-            //var logger = new BenchmarkAccumulationLogger();
-            //var sourceDiagnoser = new BenchmarkSourceDiagnoser();
-            //var plugins = BenchmarkPluginBuilder.CreateDefault()
-            //                    .AddLogger(logger)
-            //                    .AddDiagnoser(sourceDiagnoser)
-            //                    .Build();
             BenchmarkRunner.Run<BasicReadWriteBenchmarkShort>();
-            BenchmarkRunner.Run<BasicReadWriteBenchmarkInt>();
+            BenchmarkRunner.Run<BasicReadWriteBenchmarkBgr>();
         }
     }
 }

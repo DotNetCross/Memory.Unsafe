@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>DotNetCross.Memory.Unsafe.dll</id>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Added conv.u to AsPointer so this can be inlined.</releaseNotes>
+    <releaseNotes>Added Write taking 'ref T value'.</releaseNotes>
     <copyright>Copyright 2016</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>

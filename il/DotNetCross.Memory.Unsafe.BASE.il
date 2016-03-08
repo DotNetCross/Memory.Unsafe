@@ -8,7 +8,7 @@
 .assembly extern System.Runtime
 {
   .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-  .ver 4:0:0:0
+  .ver 4:0:21:0
 }
 .assembly DotNetCross.Memory.Unsafe
 {
@@ -32,18 +32,18 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 31 2E 30 00 00 )             // ...0.2.1.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 32 2E 30 00 00 )             // ...0.2.2.0..
   .hash algorithm 0x00008004
-  .ver 0:2:1:0
+  .ver 0:2:2:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {2535BF25-DF40-4E49-BB00-FDA93D929975}
+// MVID: {36A0D34F-F442-4887-A562-8BA7C2188CF5}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x01320000
+// Image base: 0x011E0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -64,6 +64,14 @@
 
   .method public hidebysig static void  Write<T>(void* p,
                                                  !!T 'value') cil managed aggressiveinlining
+  {
+    // Code size       1 (0x1)
+    .maxstack  8
+    IL_0000:  ret
+  } // end of method Unsafe::Write
+
+  .method public hidebysig static void  Write<T>(void* p,
+                                                 !!T& 'value') cil managed aggressiveinlining
   {
     // Code size       1 (0x1)
     .maxstack  8

@@ -7,7 +7,7 @@
 
     "dependencies": {
         "Microsoft.NETCore.Runtime": "1.0.1-beta-23516",
-        "System.Runtime": "4.0.20"
+        "System.Runtime": "4.0.21-beta-23516"
     },
 
     "frameworks": {
