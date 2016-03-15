@@ -2,7 +2,13 @@
 Unsafe methods for working with pointers and unmanaged memory in a completely generic not-type-safe way.
 
 ## NuGet
-https://www.nuget.org/packages/DotNetCross.Memory.Unsafe.dll/
+Current nuget package name is `DotNetCross.Memory.Unsafe` and the url:
+
+https://www.nuget.org/packages/DotNetCross.Memory.Unsafe
+
+### OBSOLETE NuGet Package Name and URL
+Unfortunately, I made the mistake of including `.dll` in the package name when I first created the `nuspec`-file. This was later fixed (version >=0.2.2.0), but also means people who have been referring to the package via `DotNetCross.Memory.Unsafe.dll` may not know this was changed to `DotNetCross.Memory.Unsafe`. Unfortunately, there was no way to redirect or rename so old package name users could be informed of this change.
+
 
 ## API
 API surface currently, no doubt this will change until a stable API has been determined.
