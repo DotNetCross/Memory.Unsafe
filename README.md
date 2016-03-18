@@ -1,4 +1,6 @@
 # Unsafe
+
+[![Join the chat at https://gitter.im/DotNetCross/Memory.Unsafe](https://badges.gitter.im/DotNetCross/Memory.Unsafe.svg)](https://gitter.im/DotNetCross/Memory.Unsafe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Unsafe methods for working with pointers and unmanaged memory in a completely generic not-type-safe way.
 
 ## NuGet
