@@ -1,12 +1,12 @@
 {
-    "version": "0.2.1",
+    "version": "0.2.2",
 
     "compilationOptions": {
         "allowUnsafe": true
     },
 
     "dependencies": {
-        "DotNetCross.Memory.Unsafe.dll": "0.2.2",
+        "DotNetCross.Memory.Unsafe": "0.2.2",
         "Microsoft.NETCore.Runtime": "1.0.1-beta-23516",
         "System.Runtime": "4.0.21-beta-23516",
         "xunit": "2.2.0-beta1-build3239",
