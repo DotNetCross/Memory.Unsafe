@@ -1,6 +1,6 @@
 {
     "projects":[
         "DotNetCross.Memory.Unsafe",
-        "DotNetCross.Memory.Unsafe.UnitTests",
+        "DotNetCross.Memory.Unsafe.UnitTests"
     ]
 }
