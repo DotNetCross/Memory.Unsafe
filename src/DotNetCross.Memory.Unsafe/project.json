@@ -11,6 +11,7 @@
     },
 
     "frameworks": {
+        "dnxcore50": { },
         "netcore50": {
             "dependencies": {
             }
