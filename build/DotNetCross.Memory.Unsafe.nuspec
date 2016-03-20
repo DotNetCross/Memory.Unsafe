@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
     <id>DotNetCross.Memory.Unsafe</id>
     <version>0.2.2</version>
@@ -13,12 +13,16 @@
     <copyright>Copyright 2016</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
-      <group targetFramework="dotnet" />
-      <group targetFramework="netcore" />
-      <group targetFramework="netcore45" />
-      <group targetFramework="dnxcore" />
-      <group targetFramework="net11" />
-      <group targetFramework="portable-net40+win8+sl4+wp7" />
+      <group targetFramework="dotnet">
+        <dependency id="System.Runtime" version="4.0.0" />
+      </group>
     </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Runtime" targetFramework="portable-net45+netcore45+wpa81+wp8" />
+    </frameworkAssemblies>
   </metadata>
+  <files>
+    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\dotnet" />
+    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
+  </files>
 </package>
