@@ -2,27 +2,36 @@
 <package>
   <metadata>
     <id>DotNetCross.Memory.Unsafe</id>
-    <version>0.2.3</version>
+    <version>0.2.3.2</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Added Write taking 'ref T value'.</releaseNotes>
-    <copyright>Copyright 2016</copyright>
+    <releaseNotes>Fix nuget package for .NET 4.5/4.6 etc.</releaseNotes>
+    <copyright>© nietras. All rights reserved.</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
-      <group targetFramework="dotnet">
-        <dependency id="System.Runtime" version="4.0.0" />
+      <group targetFramework="MonoAndroid1.0" />
+      <group targetFramework="MonoTouch1.0" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="System.Runtime" version="4.0.*" />
       </group>
+      <group targetFramework="Windows8.0" />
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="WindowsPhoneApp8.1" />
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="Xamarin.Mac2.0" />
+      <group targetFramework="Xamarin.TVOS1.0" />
+      <group targetFramework="Xamarin.WatchOS1.0" />
+      <group targetFramework="dnx451" />
+      <group targetFramework="dnxcore50" />
     </dependencies>
-    <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.Runtime" targetFramework="portable-net45+netcore45+wpa81+wp8" />
-    </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\dotnet" />
-    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\portable-net45+netcore45+wpa81+wp8" />
+    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\netstandard1.0" />
   </files>
 </package>

@@ -6,9 +6,8 @@
     },
 
     "dependencies": {
-        "DotNetCross.Memory.Unsafe": "0.2.3",
-        "Microsoft.NETCore.Runtime": "1.0.1-beta-23516",
-        "System.Runtime": "4.0.21-beta-23516",
+        "DotNetCross.Memory.Unsafe": "0.2.3.2",
+        "Microsoft.NETCore.Runtime": "1.0.2-rc3-24112-00",
         "xunit": "2.2.0-beta1-build3239",
         "xunit.runner.console": "2.2.0-beta1-build3239"
     },
@@ -21,6 +20,7 @@
         },
         "netcore50": {
             "dependencies": {
+                "System.Runtime": "4.1.0-rc3-24112-00"
             }
         }
     },
