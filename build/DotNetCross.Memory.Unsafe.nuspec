@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>DotNetCross.Memory.Unsafe</id>
-    <version>0.2.3.2</version>
+    <version>0.2.3.3</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
@@ -10,7 +10,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
     <releaseNotes>Fix nuget package for .NET 4.5/4.6 etc.</releaseNotes>
-    <copyright>© nietras. All rights reserved.</copyright>
+    <copyright>Â© nietras. All rights reserved.</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
       <group targetFramework="MonoAndroid1.0" />
@@ -33,5 +33,6 @@
   </metadata>
   <files>
     <file src="DotNetCross.Memory.Unsafe.dll" target="lib\netstandard1.0" />
+    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\portable-net45+win8+wpa81+wp8" />
   </files>
 </package>
