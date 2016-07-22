@@ -12,6 +12,12 @@ https://www.nuget.org/packages/DotNetCross.Memory.Unsafe
 ### OBSOLETE NuGet Package Name and URL
 Unfortunately, I made the mistake of including `.dll` in the package name when I first created the `nuspec`-file. This was later fixed (version >= 0.2.2.0), but also means people who have been referring to the package via `DotNetCross.Memory.Unsafe.dll` may not know this was changed to `DotNetCross.Memory.Unsafe`. Unfortunately, there was no way to redirect or rename the old package so users could be informed of this change.
 
+### Official .NET Core Package
+The `Unsafe` class has now been added to .NET Core and exists as a separate package:
+
+https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/
+
+If in doubt, use this official package.
 
 ## API
 API surface currently, no doubt this will change until a stable API has been determined.
