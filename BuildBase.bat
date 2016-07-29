@@ -1,2 +1,2 @@
 dotnet restore
-dotnet compile -c Release src/DotNetCross.Memory.Unsafe/ -o il/
+dotnet build -c Release src/DotNetCross.Memory.Unsafe/ -f netstandard1.0 -o il/
