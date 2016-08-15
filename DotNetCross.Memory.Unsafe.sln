@@ -5,15 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotCross.Memory.Unsafe", "DotCross.Memory.Unsafe", "{813110EC-26A8-4273-A22F-EBE8507834AF}"
 	ProjectSection(SolutionItems) = preProject
-		..\AssembleRewrittenIL.bat = ..\AssembleRewrittenIL.bat
-		..\BuildBase.bat = ..\BuildBase.bat
-		..\DisassembleBase.bat = ..\DisassembleBase.bat
-		..\il\DotNetCross.Memory.Unsafe.BASE.il = ..\il\DotNetCross.Memory.Unsafe.BASE.il
-		..\il\DotNetCross.Memory.Unsafe.il = ..\il\DotNetCross.Memory.Unsafe.il
+		il\DotNetCross.Memory.Unsafe.il = il\DotNetCross.Memory.Unsafe.il
 		build\DotNetCross.Memory.Unsafe.nuspec = build\DotNetCross.Memory.Unsafe.nuspec
 		global.json = global.json
-		..\NugetPack.bat = ..\NugetPack.bat
-		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotNetCross.Memory.Unsafe", "src\DotNetCross.Memory.Unsafe\DotNetCross.Memory.Unsafe.xproj", "{A421B9BA-2399-4B78-A4A8-02AD3A6CF2F2}"
