@@ -1,18 +1,27 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotCross.Memory.Unsafe", "DotCross.Memory.Unsafe", "{813110EC-26A8-4273-A22F-EBE8507834AF}"
 	ProjectSection(SolutionItems) = preProject
 		il\DotNetCross.Memory.Unsafe.il = il\DotNetCross.Memory.Unsafe.il
 		build\DotNetCross.Memory.Unsafe.nuspec = build\DotNetCross.Memory.Unsafe.nuspec
-		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotNetCross.Memory.Unsafe", "src\DotNetCross.Memory.Unsafe\DotNetCross.Memory.Unsafe.xproj", "{A421B9BA-2399-4B78-A4A8-02AD3A6CF2F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe", "src\DotNetCross.Memory.Unsafe\DotNetCross.Memory.Unsafe.csproj", "{A421B9BA-2399-4B78-A4A8-02AD3A6CF2F2}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DotNetCross.Memory.Unsafe.UnitTests", "tests\DotNetCross.Memory.Unsafe.UnitTests\DotNetCross.Memory.Unsafe.UnitTests.xproj", "{2E86AFF9-7EBC-491E-A178-2C73403836ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe.UnitTests", "tests\DotNetCross.Memory.Unsafe.UnitTests\DotNetCross.Memory.Unsafe.UnitTests.csproj", "{2E86AFF9-7EBC-491E-A178-2C73403836ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{B29390E2-23E2-4B55-BF15-B35C730CB74C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		AssembleRewrittenIL.bat = AssembleRewrittenIL.bat
+		BuildBase.bat = BuildBase.bat
+		DisassembleBase.bat = DisassembleBase.bat
+		NugetPack.bat = NugetPack.bat
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +40,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6CCF63B-76DD-479F-A5E4-A2453F631F9A}
 	EndGlobalSection
 EndGlobal
