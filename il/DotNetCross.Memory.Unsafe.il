@@ -51,6 +51,14 @@
 .class public abstract auto ansi sealed beforefieldinit DotNetCross.Memory.Unsafe
        extends [System.Runtime]System.Object
 {
+  .method public hidebysig static !!T&  Unbox<T>(object o) cil managed aggressiveinlining
+  {
+    .maxstack  1
+    ldarg.0
+    unbox !!T
+    ret
+  } // end of method Unsafe::Read
+
   .method public hidebysig static !!T  Read<T>(void* p) cil managed aggressiveinlining
   {
     .maxstack  1

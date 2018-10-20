@@ -8,7 +8,7 @@
 .assembly extern System.Runtime
 {
   .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-  .ver 4:0:21:0
+  .ver 4:0:0:0
 }
 .assembly DotNetCross.Memory.Unsafe
 {
@@ -19,6 +19,9 @@
   // --- The following custom attribute is added automatically, do not uncomment -------
   //  .custom instance void [System.Runtime]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [System.Runtime]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 02 00 00 00 00 00 ) 
 
+  .custom instance void [System.Runtime]System.Reflection.AssemblyInformationalVersionAttribute::.ctor(string) = ( 01 00 05 30 2E 32 2E 33 00 00 )                   // ...0.2.3..
+  .custom instance void [System.Runtime]System.Runtime.Versioning.TargetFrameworkAttribute::.ctor(string) = ( 01 00 19 2E 4E 45 54 53 74 61 6E 64 61 72 64 2C   // ....NETStandard,
+                                                                                                              56 65 72 73 69 6F 6E 3D 76 31 2E 30 00 00 )       // Version=v1.0..
   .custom instance void [System.Runtime]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 19 44 6F 74 4E 65 74 43 72 6F 73 73 2E 4D   // ...DotNetCross.M
                                                                                                     65 6D 6F 72 79 2E 55 6E 73 61 66 65 00 00 )       // emory.Unsafe..
   .custom instance void [System.Runtime]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 3E 55 6E 73 61 66 65 20 6D 65 74 68 6F 64   // ..>Unsafe method
@@ -32,18 +35,18 @@
   .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
                                                                                                         44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
                                                                                                         00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 32 2E 30 00 00 )             // ...0.2.3.0..
+  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 33 2E 30 00 00 )             // ...0.2.3.0..
   .hash algorithm 0x00008004
   .ver 0:2:3:0
 }
 .module DotNetCross.Memory.Unsafe.dll
-// MVID: {36A0D34F-F442-4887-A562-8BA7C2188CF5}
+// MVID: {2B5956B8-4091-4529-A248-67E3F703003D}
 .imagebase 0x10000000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x011E0000
+// Image base: 0x00F80000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -55,7 +58,7 @@
   {
     // Code size       10 (0xa)
     .maxstack  1
-    .locals init ([0] !!T V_0)
+    .locals init (!!T V_0)
     IL_0000:  ldloca.s   V_0
     IL_0002:  initobj    !!T
     IL_0008:  ldloc.0
@@ -90,7 +93,7 @@
   {
     // Code size       10 (0xa)
     .maxstack  1
-    .locals init ([0] !!T V_0)
+    .locals init (!!T V_0)
     IL_0000:  ldloca.s   V_0
     IL_0002:  initobj    !!T
     IL_0008:  ldloc.0
