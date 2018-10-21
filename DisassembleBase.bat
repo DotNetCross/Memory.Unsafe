@@ -1,1 +1,0 @@
-.\tools\ildasm.exe .\il\DotNetCross.Memory.Unsafe.dll /out=.\il\DotNetCross.Memory.Unsafe.BASE.il

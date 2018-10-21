@@ -1,1 +1,0 @@
-.\tools\nuget pack .\build\DotNetCross.Memory.Unsafe.nuspec
