@@ -1,4 +1,5 @@
-﻿using System.Runtime.CompilerServices;
+﻿using System;
+using System.Runtime.CompilerServices;
 
 namespace DotNetCross.Memory
 {
@@ -25,16 +26,8 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe void* AsPointer<T>(ref T value) { return (void*)0; } // Overridden in IL
 
-        // Not currently possible in C#
-        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //public static unsafe ref TTo AsRef<TFrom, TTo>(ref TFrom value) { return default(TTo); } // Overridden in IL
-
-        // Not sure how this can be done
-        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //public static unsafe TTo AsValue<TFrom, TTo>(TFrom value) 
-        //    where TFrom : struct
-        //    where TTo : struct
-        //{ return default(TTo); } // Overridden in IL
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static unsafe ref TTo AsRef<TFrom, TTo>(ref TFrom value) { throw new NotImplementedException(); } // Overridden in IL
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe void InitBlock(void* dst, byte initValue, uint size) { }
