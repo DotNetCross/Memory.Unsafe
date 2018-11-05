@@ -12,6 +12,8 @@
 *.userprefs
 
 # Build results
+build/
+/src-pack/DotNetCross.Memory.Unsafe.dll
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -21,6 +23,7 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+[Ll]og/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -232,3 +235,4 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+/src/DotNetCross.Memory.Unsafe/il

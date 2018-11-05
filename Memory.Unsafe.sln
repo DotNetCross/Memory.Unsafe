@@ -1,0 +1,62 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{B29390E2-23E2-4B55-BF15-B35C730CB74C}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		all.ps1 = all.ps1
+		build.ps1 = build.ps1
+		ilasm.bat = ilasm.bat
+		ildasm.bat = ildasm.bat
+		LICENSE = LICENSE
+		pack.ps1 = pack.ps1
+		README.md = README.md
+		rename.ps1 = rename.ps1
+		restore.ps1 = restore.ps1
+		test.ps1 = test.ps1
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Unsafe", "src\DotNetCross.Memory.Unsafe\DotNetCross.Memory.Unsafe.csproj", "{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe.Ref", "src\DotNetCross.Memory.Unsafe.Ref\DotNetCross.Memory.Unsafe.Ref.csproj", "{757DD645-B7ED-4DDA-8796-F228B0BB574D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe.Tests", "src\DotNetCross.Memory.Unsafe.Tests\DotNetCross.Memory.Unsafe.Tests.csproj", "{1BEE17BC-3071-4A40-8F16-7038922254B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src-pack", "src-pack", "{4BEEB3E3-BA42-4DB0-92B7-D7FE6C067493}"
+	ProjectSection(SolutionItems) = preProject
+		src-pack\DotNetCross.Memory.Unsafe.nuspec = src-pack\DotNetCross.Memory.Unsafe.nuspec
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Benchmark", "src\DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Benchmark.csproj", "{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E6CCF63B-76DD-479F-A5E4-A2453F631F9A}
+	EndGlobalSection
+EndGlobal

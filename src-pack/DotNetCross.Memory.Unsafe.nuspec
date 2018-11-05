@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>DotNetCross.Memory.Unsafe</id>
+    <version>0.2.3.5</version>
+    <authors>nietras</authors>
+    <owners>nietras</owners>
+    <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Unsafe methods for working with pointers and unmanaged memory.</description>
+    <releaseNotes>Restructure.</releaseNotes>
+    <copyright>© nietras. All rights reserved.</copyright>
+    <tags>unmanaged pointer pointers generic</tags>
+    <dependencies>
+      <!-- https://docs.nuget.org/create/targetframeworks -->
+      <!-- http://danrigby.com/2014/04/16/xamarin-pcl-profile-notes/ -->
+      <!-- http://portablelibraryprofiles.apps.stephencleary.com/ -->
+      <group targetFramework="MonoAndroid1.0" />
+      <group targetFramework="MonoTouch1.0" />
+      <!--Profile 259 - netstandard 1.0 -->
+      <group targetFramework="portable-net45+win8+wpa81+wp8" />
+      <!--Profile 344-->
+      <group targetFramework="portable-net45+sl5+win8+wpa81+wp8" />
+      <!--Profile 151-->
+      <group targetFramework="portable-net451+win81+wpa81" />
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETFramework4.6" />
+      <!--The listing of dependencies for netstandard causes issues for ordinary non-core projects, 
+          which is why other frameworks are listed, so these have no dependencies.-->
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="System.Runtime" version="4.0.*" />
+      </group>
+      <group targetFramework="Windows8.0" />
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="WindowsPhoneApp8.1" />
+      <group targetFramework="Xamarin.iOS1.0" />
+      <group targetFramework="Xamarin.Mac2.0" />
+      <group targetFramework="Xamarin.TVOS1.0" />
+      <group targetFramework="Xamarin.WatchOS1.0" />
+      <group targetFramework="dnx451" />
+      <group targetFramework="dnx50" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="DotNetCross.Memory.Unsafe.dll" target="lib\netstandard1.0" />
+    <!--<file src="DotNetCross.Memory.Unsafe.dll" target="lib\portable-net45+win8+wpa81+wp8" />-->
+  </files>
+</package>

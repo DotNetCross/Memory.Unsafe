@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <VersionPrefix>0.2.3</VersionPrefix>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>portable</DebugType>
+    <AssemblyName>DotNetCross.Memory.Unsafe.Ref</AssemblyName>
+    <PackageId>DotNetCross.Memory.Unsafe.Ref</PackageId>
+    <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>..\..\build\Libs_$(Platform)_$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  
+  <!--<Import Project="../Relative_Output_Path.props" />
+  <Import Project="../Library_Project_Output.props" />-->
+
+</Project>
