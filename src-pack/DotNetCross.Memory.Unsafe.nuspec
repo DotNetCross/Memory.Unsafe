@@ -2,14 +2,14 @@
 <package>
   <metadata>
     <id>DotNetCross.Memory.Unsafe</id>
-    <version>0.2.3.4</version>
+    <version>0.2.3.5</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <licenseUrl>https://github.com/DotNetCross/Memory.Unsafe/blob/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Fix nuget package for PCL/Xamarin scenarios.</releaseNotes>
+    <releaseNotes>Restructure.</releaseNotes>
     <copyright>© nietras. All rights reserved.</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
