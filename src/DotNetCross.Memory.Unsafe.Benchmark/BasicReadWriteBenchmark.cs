@@ -11,7 +11,7 @@ namespace DotNetCross.Memory.Benchmark
 {
     public struct Bgr { public byte B; public byte G; public byte R; }
 
-    [Config("jobs=AllJits")]
+    [LegacyJitX86Job, LegacyJitX64Job, RyuJitX64Job]
     public class BasicReadWriteBenchmark<T>
         where T : struct
     {
