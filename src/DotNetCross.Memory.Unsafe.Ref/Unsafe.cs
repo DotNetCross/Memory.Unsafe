@@ -77,6 +77,8 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref T Unbox<T>(object box) where T : struct { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static void Write<T>(void* destination, ref T value) { }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void Write<T>(void* destination, T value) { }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void WriteUnaligned<T>(void* destination, T value) { }
