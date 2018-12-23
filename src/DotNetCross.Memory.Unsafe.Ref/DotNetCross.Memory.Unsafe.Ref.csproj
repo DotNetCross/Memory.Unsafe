@@ -20,6 +20,14 @@
   <PropertyGroup>
     <OutputPath>..\..\build\Libs_$(Platform)_$(Configuration)\</OutputPath>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
   
   <!--<Import Project="../Relative_Output_Path.props" />
   <Import Project="../Library_Project_Output.props" />-->

@@ -1,55 +1,58 @@
+#include "coreassembly.h"
 
-//  Microsoft (R) .NET Framework IL Disassembler.  Version 4.6.1055.0
-//  Copyright (c) Microsoft Corporation.  All rights reserved.
-
-
-
-// Metadata version: v4.0.30319
-.assembly extern System.Runtime
+.assembly System.Runtime.CompilerServices.Unsafe
 {
-  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
-  .ver 4:0:0:0
-}
-.assembly DotNetCross.Memory.Unsafe
-{
-  .custom instance void [System.Runtime]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
-  .custom instance void [System.Runtime]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+  .custom instance void [CORE_ASSEMBLY]System.Runtime.CompilerServices.CompilationRelaxationsAttribute::.ctor(int32) = ( 01 00 08 00 00 00 00 00 ) 
+  .custom instance void [CORE_ASSEMBLY]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute::.ctor() = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
                                                                                                                    63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
 
   // --- The following custom attribute is added automatically, do not uncomment -------
-  //  .custom instance void [System.Runtime]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [System.Runtime]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 02 00 00 00 00 00 ) 
+  //  .custom instance void [CORE_ASSEMBLY]System.Diagnostics.DebuggableAttribute::.ctor(valuetype [CORE_ASSEMBLY]System.Diagnostics.DebuggableAttribute/DebuggingModes) = ( 01 00 02 00 00 00 00 00 ) 
 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 19 44 6F 74 4E 65 74 43 72 6F 73 73 2E 4D   // ...DotNetCross.M
-                                                                                                    65 6D 6F 72 79 2E 55 6E 73 61 66 65 00 00 )       // emory.Unsafe..
-  .custom instance void [System.Runtime]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 3E 55 6E 73 61 66 65 20 6D 65 74 68 6F 64   // ..>Unsafe method
-                                                                                                          73 20 66 6F 72 20 77 6F 72 6B 69 6E 67 20 77 69   // s for working wi
-                                                                                                          74 68 20 70 6F 69 6E 74 65 72 73 20 61 6E 64 20   // th pointers and 
-                                                                                                          75 6E 6D 61 6E 61 67 65 64 20 6D 65 6D 6F 72 79   // unmanaged memory
-                                                                                                          2E 00 00 )                                        // ...
-  .custom instance void [System.Runtime]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 0B 44 6F 74 4E 65 74 43 72 6F 73 73 00 00 ) // ...DotNetCross..
-  .custom instance void [System.Runtime]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 19 44 6F 74 4E 65 74 43 72 6F 73 73 2E 4D   // ...DotNetCross.M
-                                                                                                      65 6D 6F 72 79 2E 55 6E 73 61 66 65 00 00 )       // emory.Unsafe..
-  .custom instance void [System.Runtime]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 1D 43 6F 70 79 72 69 67 68 74 20 C2 A9 20   // ...Copyright .. 
-                                                                                                        44 6F 74 4E 65 74 43 72 6F 73 73 20 32 30 31 36   // DotNetCross 2016
-                                                                                                        00 00 ) 
-  .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 32 2E 30 00 00 )             // ...0.2.3.0..
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 34 2E 30 2E 30 2E 30 00 00 )             // ...4.0.0.0..
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyInformationalVersionAttribute::.ctor(string) = ( 01 00 07 34 2E 30 2E 30 2E 30 00 00 )             // ...4.0.0.0..
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyTitleAttribute::.ctor(string) = ( 01 00 26 53 79 73 74 65 6D 2E 52 75 6E 74 69 6D   // ..&System.Runtim
+                                                                                              65 2E 43 6F 6D 70 69 6C 65 72 53 65 72 76 69 63   // e.CompilerServic
+                                                                                              65 73 2E 55 6E 73 61 66 65 00 00 )                // es.Unsafe..
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyDescriptionAttribute::.ctor(string) = ( 01 00 26 53 79 73 74 65 6D 2E 52 75 6E 74 69 6D   // ..&System.Runtim
+                                                                                                    65 2E 43 6F 6D 70 69 6C 65 72 53 65 72 76 69 63   // e.CompilerServic
+                                                                                                    65 73 2E 55 6E 73 61 66 65 00 00 )                // es.Unsafe..
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyMetadataAttribute::.ctor(string, string) = (
+    01 00 15 2e 4e 45 54 46 72 61 6d 65 77 6f 72 6b
+    41 73 73 65 6d 62 6c 79 00 00 00
+  ) // ".NETFrameworkAssembly", ""
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyMetadataAttribute::.ctor(string, string) = (
+    01 00 0b 53 65 72 76 69 63 65 61 62 6c 65 04 54
+    72 75 65 00 00
+  ) // "Serviceable", "True"
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyCopyrightAttribute::.ctor(string) = ( 01 00 2F C2 A9 20 4D 69 63 72 6F 73 6F 66 74 20   // ../.. Microsoft 
+                                                                                        43 6F 72 70 6F 72 61 74 69 6F 6E 2E 20 20 41 6C   // Corporation.  Al
+                                                                                        6C 20 72 69 67 68 74 73 20 72 65 73 65 72 76 65   // l rights reserve
+                                                                                        64 2E 00 00 )                                     // d...
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyCompanyAttribute::.ctor(string) = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                      70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom instance void [CORE_ASSEMBLY]System.Reflection.AssemblyProductAttribute::.ctor(string) = ( 01 00 1A 4D 69 63 72 6F 73 6F 66 74 C2 AE 20 2E   // ...Microsoft.. .
+                                                                                      4E 45 54 20 46 72 61 6D 65 77 6F 72 6B 00 00 )    // NET Framework..
+  .custom instance void [CORE_ASSEMBLY]System.CLSCompliantAttribute::.ctor(bool) = (
+    01 00 00 00 00
+  ) // false
   .hash algorithm 0x00008004
-  .ver 0:2:3:0
+  .ver 4:0:5:0
 }
-.module DotNetCross.Memory.Unsafe.dll
-// MVID: {B87A9616-91DD-4DC6-A4FC-3217D05362CD}
-.imagebase 0x10000000
+.module System.Runtime.CompilerServices.Unsafe.dll
+// MVID: {1E97D84A-565B-49C5-B60A-F31A1A4ACE13}
+.imagebase 0x00400000
 .file alignment 0x00000200
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000001    //  ILONLY
-// Image base: 0x011E0000
+// Image base: 0x02ED0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
 
-.class public abstract auto ansi sealed beforefieldinit DotNetCross.Memory.Unsafe
-       extends [System.Runtime]System.Object
+.class public abstract auto ansi sealed beforefieldinit System.Runtime.CompilerServices.Unsafe
+       extends [CORE_ASSEMBLY]System.Object
 {
   .method public hidebysig static !!T Read<T>(void* source) cil managed aggressiveinlining
   {
@@ -80,17 +83,6 @@
         ret
   } // end of method Unsafe::ReadUnaligned
   
-  .method public hidebysig static void  Write<T>(void* p,
-                                                 !!T& 'value') cil managed aggressiveinlining
-  {
-    .maxstack  2
-    ldarg.0
-    ldarg.1
-    ldobj !!T
-    stobj !!T
-    ret  
-  } // end of method Unsafe::Write
-
   .method public hidebysig static void Write<T>(void* destination,
                                                  !!T 'value') cil managed aggressiveinlining
   {
@@ -456,27 +448,12 @@
         ret 
   } // end of method Unsafe::IsAddressLessThan
 
-} // end of class DotNetCross.Memory.Unsafe
-
-.class public auto ansi sealed beforefieldinit DotNetCross.Memory.Pinnable
-       extends [System.Runtime]System.Object
-{
-  .field public uint8 Pin
-  .method public hidebysig specialname rtspecialname 
-          instance void  .ctor() cil managed
-  {
-    .maxstack  1
-    ldarg.0
-    call       instance void [System.Runtime]System.Object::.ctor()
-    ret
-  } // end of method Pinnable::.ctor
-
-} // end of class DotNetCross.Memory.Pinnable
+} // end of class System.Runtime.CompilerServices.Unsafe
 
 .class private auto ansi sealed beforefieldinit System.Runtime.Versioning.NonVersionableAttribute
-       extends [System.Runtime]System.Attribute
+       extends [CORE_ASSEMBLY]System.Attribute
 {
-  .custom instance void [System.Runtime]System.AttributeUsageAttribute::.ctor(valuetype [System.Runtime]System.AttributeTargets) = ( 01 00 6C 00 00 00 02 00 54 02 0D 41 6C 6C 6F 77   // ..l.....T..Allow
+  .custom instance void [CORE_ASSEMBLY]System.AttributeUsageAttribute::.ctor(valuetype [CORE_ASSEMBLY]System.AttributeTargets) = ( 01 00 6C 00 00 00 02 00 54 02 0D 41 6C 6C 6F 77   // ..l.....T..Allow
                                                                                                                                      4D 75 6C 74 69 70 6C 65 00 54 02 09 49 6E 68 65   // Multiple.T..Inhe
                                                                                                                                      72 69 74 65 64 00 )                               // rited.
   .method public hidebysig specialname rtspecialname 
@@ -484,47 +461,25 @@
   {
         .maxstack 1
         ldarg.0
-        call instance void [System.Runtime]System.Attribute::.ctor()
+        call instance void [CORE_ASSEMBLY]System.Attribute::.ctor()
         ret
   } // end of method NonVersionableAttribute::.ctor
 
 } // end of class System.Runtime.Versioning.NonVersionableAttribute
 
-.class private auto ansi sealed beforefieldinit Microsoft.CodeAnalysis.EmbeddedAttribute
-       extends [System.Runtime]System.Attribute
-{
-  .custom instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
-  .custom instance void Microsoft.CodeAnalysis.EmbeddedAttribute::.ctor() = ( 01 00 00 00 ) 
-  .method public hidebysig specialname rtspecialname 
-          instance void  .ctor() cil managed
-  {
-    .maxstack  1
-    ldarg.0
-    call       instance void [System.Runtime]System.Attribute::.ctor()
-    nop
-    ret
-  } // end of method EmbeddedAttribute::.ctor
-
-} // end of class Microsoft.CodeAnalysis.EmbeddedAttribute
-
+#ifdef netcoreapp
+#else
 .class private auto ansi sealed beforefieldinit System.Runtime.CompilerServices.IsReadOnlyAttribute
-       extends [System.Runtime]System.Attribute
+       extends [CORE_ASSEMBLY]System.Attribute
 {
-  .custom instance void [System.Runtime]System.Runtime.CompilerServices.CompilerGeneratedAttribute::.ctor() = ( 01 00 00 00 ) 
-  .custom instance void Microsoft.CodeAnalysis.EmbeddedAttribute::.ctor() = ( 01 00 00 00 ) 
   .method public hidebysig specialname rtspecialname 
-          instance void  .ctor() cil managed
+          instance void .ctor () cil managed 
   {
-    .maxstack  1
-    ldarg.0
-    call       instance void [System.Runtime]System.Attribute::.ctor()
-    nop
-    ret
+        .maxstack 1
+        ldarg.0
+        call instance void [CORE_ASSEMBLY]System.Attribute::.ctor()
+        ret
   } // end of method IsReadOnlyAttribute::.ctor
 
 } // end of class System.Runtime.CompilerServices.IsReadOnlyAttribute
-
-// =============================================================
-
-// *********** DISASSEMBLY COMPLETE ***********************
-// WARNING: Created Win32 resource file .\il\DotNetCross.Memory.Unsafe.res
+#endif
