@@ -80,7 +80,7 @@
         ret
   } // end of method Unsafe::ReadUnaligned
   
-  .method public hidebysig static void  Write<T>(void* p,
+  .method public hidebysig static void  Write<T>(void* destination,
                                                  !!T& 'value') cil managed aggressiveinlining
   {
     .maxstack  2
