@@ -28,7 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src-pack", "src-pack", "{4B
 		src-pack\DotNetCross.Memory.Unsafe.nuspec = src-pack\DotNetCross.Memory.Unsafe.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Benchmark", "src\DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Benchmark.csproj", "{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Unsafe.Benchmark", "src\DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Unsafe.Benchmark.csproj", "{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,10 +48,10 @@ Global
 		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BEE17BC-3071-4A40-8F16-7038922254B6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{335FFEC5-1982-4B23-A3DB-71EACCFE18E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
