@@ -12,6 +12,16 @@ namespace DotNetCross.Memory
     // NOTE: Code here only to guide the generation of IL, that is edited by hand
     public static class Unsafe
     {
+        // DotNetCross.Memory.Unsafe specific methods 
+        // not found in corefx Unsafe currently
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static ref T AsRefAtByteOffset<T>(object source, System.IntPtr byteoffset) { throw null; }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static System.IntPtr ByteOffset<T>(object origin, ref T target) { throw null; }
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public unsafe static void Write<T>(void* destination, ref T value) { }
+
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref T AddByteOffset<T>(ref T source, System.IntPtr byteOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -76,8 +86,6 @@ namespace DotNetCross.Memory
         public static ref T Subtract<T>(ref T source, System.IntPtr elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref T Unbox<T>(object box) where T : struct { throw null; }
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static void Write<T>(void* destination, ref T value) { }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void Write<T>(void* destination, T value) { }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

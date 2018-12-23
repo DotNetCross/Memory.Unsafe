@@ -51,6 +51,50 @@
 .class public abstract auto ansi sealed beforefieldinit DotNetCross.Memory.Unsafe
        extends [System.Runtime]System.Object
 {
+  .method public hidebysig static !!T& AsRefAtByteOffset<T>(
+      object obj, native int offset) cil managed aggressiveinlining
+  {
+      .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+      .maxstack 2
+      .locals ([0] uint8& addr)
+      ldarg.0     // load the object
+      stloc.0     // convert the object pointer to a byref
+      ldloc.0     // load the object pointer as a byref
+      ldarg.1     // load the offset
+      add         // add the offset
+      //ldobj !!T   // load a T value from the computed address
+      // Roundtrip via a local to avoid type mismatch on return that the JIT inliner chokes on.
+      //stloc.0
+      //ldloc.0
+      ret
+  }
+
+  .method public hidebysig static native int ByteOffset<T>(object origin, !!T& target) cil managed aggressiveinlining
+  {
+      .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+      .maxstack 2
+      .locals ([0] uint8& addr)
+      ldarg.1
+      ldarg.0
+      stloc.0     // convert the object pointer to a byref
+      ldloc.0     // load the object pointer as a byref
+      sub
+      ret
+  } // end of method Unsafe::ByteOffset
+
+  .method public hidebysig static void  Write<T>(void* destination,
+                                                 !!T& 'value') cil managed aggressiveinlining
+  {
+      .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+      .maxstack  2
+      ldarg.0
+      ldarg.1
+      ldobj !!T
+      stobj !!T
+      ret  
+  } // end of method Unsafe::Write
+
+
   .method public hidebysig static !!T Read<T>(void* source) cil managed aggressiveinlining
   {
         .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
@@ -79,17 +123,6 @@
         ldobj !!T
         ret
   } // end of method Unsafe::ReadUnaligned
-  
-  .method public hidebysig static void  Write<T>(void* destination,
-                                                 !!T& 'value') cil managed aggressiveinlining
-  {
-    .maxstack  2
-    ldarg.0
-    ldarg.1
-    ldobj !!T
-    stobj !!T
-    ret  
-  } // end of method Unsafe::Write
 
   .method public hidebysig static void Write<T>(void* destination,
                                                  !!T 'value') cil managed aggressiveinlining
