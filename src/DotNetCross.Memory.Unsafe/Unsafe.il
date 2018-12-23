@@ -34,7 +34,7 @@
                                                                                                         00 00 ) 
   .custom instance void [System.Runtime]System.Reflection.AssemblyFileVersionAttribute::.ctor(string) = ( 01 00 07 30 2E 32 2E 32 2E 30 00 00 )             // ...0.2.3.0..
   .hash algorithm 0x00008004
-  .ver 0:2:3:0
+  .ver 0:3:0:0
 }
 .module DotNetCross.Memory.Unsafe.dll
 // MVID: {B87A9616-91DD-4DC6-A4FC-3217D05362CD}
