@@ -10,7 +10,7 @@ namespace DotNetCross.Memory.Tests
         }
 
         [Fact]
-        public static unsafe void AsRefAtByteOffset()
+        public static unsafe void AsRefAtByteOffset_Object()
         {
             var obj = new ObjectValue();
             ref var valueRef = ref obj.Value;
@@ -22,6 +22,25 @@ namespace DotNetCross.Memory.Tests
 
             Assert.True(Unsafe.AreSame(ref valueRef, ref byteOffsetValueRef));
             Assert.Equal(17, obj.Value);
+        }
+
+        [Fact]
+        public static unsafe void AsRefAtByteOffset_Array()
+        {
+            var array = new byte[] { 0, 1, 2};
+            ref var valueRef = ref array[1];
+
+            var valueByteOffset = Unsafe.ByteOffset(array, ref valueRef);
+
+            ref var byteOffsetValueRef = ref Unsafe.AsRefAtByteOffset<byte>(array, valueByteOffset);
+            byteOffsetValueRef = 17;
+
+            ref var nextValueRef = ref Unsafe.Add(ref byteOffsetValueRef, 1);
+            nextValueRef = 42;
+
+            Assert.True(Unsafe.AreSame(ref valueRef, ref byteOffsetValueRef));
+            Assert.Equal(17, array[1]);
+            Assert.Equal(42, array[2]);
         }
     }
 }
