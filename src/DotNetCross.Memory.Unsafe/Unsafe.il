@@ -51,7 +51,7 @@
 .class public abstract auto ansi sealed beforefieldinit DotNetCross.Memory.Unsafe
        extends [System.Runtime]System.Object
 {
-  .method public hidebysig static !!T& AsRefAtByteOffset<T>(
+  .method public hidebysig static !!T& RefAtByteOffset<T>(
       object obj, native int offset) cil managed aggressiveinlining
   {
       .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )

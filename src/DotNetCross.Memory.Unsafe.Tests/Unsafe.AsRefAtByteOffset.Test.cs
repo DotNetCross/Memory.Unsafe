@@ -2,7 +2,7 @@ using Xunit;
 
 namespace DotNetCross.Memory.Tests
 {
-    public class Unsafe_AsRefAtByteOffset_Test
+    public class Unsafe_RefAtByteOffset_Test
     {
         public class ObjectValue
         {
@@ -10,14 +10,14 @@ namespace DotNetCross.Memory.Tests
         }
 
         [Fact]
-        public static unsafe void AsRefAtByteOffset_Object()
+        public static unsafe void RefAtByteOffset_Object()
         {
             var obj = new ObjectValue();
             ref var valueRef = ref obj.Value;
             
             var valueByteOffset = Unsafe.ByteOffset(obj, ref valueRef);
 
-            ref var byteOffsetValueRef = ref Unsafe.AsRefAtByteOffset<int>(obj, valueByteOffset);
+            ref var byteOffsetValueRef = ref Unsafe.RefAtByteOffset<int>(obj, valueByteOffset);
             byteOffsetValueRef = 17;
 
             Assert.True(Unsafe.AreSame(ref valueRef, ref byteOffsetValueRef));
@@ -25,14 +25,14 @@ namespace DotNetCross.Memory.Tests
         }
 
         [Fact]
-        public static unsafe void AsRefAtByteOffset_Array()
+        public static unsafe void RefAtByteOffset_Array()
         {
             var array = new byte[] { 0, 1, 2};
             ref var valueRef = ref array[1];
 
             var valueByteOffset = Unsafe.ByteOffset(array, ref valueRef);
 
-            ref var byteOffsetValueRef = ref Unsafe.AsRefAtByteOffset<byte>(array, valueByteOffset);
+            ref var byteOffsetValueRef = ref Unsafe.RefAtByteOffset<byte>(array, valueByteOffset);
             byteOffsetValueRef = 17;
 
             ref var nextValueRef = ref Unsafe.Add(ref byteOffsetValueRef, 1);

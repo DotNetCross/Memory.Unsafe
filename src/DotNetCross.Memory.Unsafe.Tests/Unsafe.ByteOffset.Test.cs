@@ -13,7 +13,7 @@ namespace DotNetCross.Memory.Tests
             
             var valueByteOffset = Unsafe.ByteOffset(obj, ref valueRef);
 
-            ref var byteOffsetValueRef = ref Unsafe.AsRefAtByteOffset<int>(obj, valueByteOffset);
+            ref var byteOffsetValueRef = ref Unsafe.RefAtByteOffset<int>(obj, valueByteOffset);
             byteOffsetValueRef = 17;
 
             Assert.True(Unsafe.AreSame(ref valueRef, ref byteOffsetValueRef));
@@ -32,7 +32,7 @@ namespace DotNetCross.Memory.Tests
 
             var valueByteOffset = Unsafe.ByteOffset(array, ref valueRef);
 
-            ref var byteOffsetValueRef = ref Unsafe.AsRefAtByteOffset<int>(array, valueByteOffset);
+            ref var byteOffsetValueRef = ref Unsafe.RefAtByteOffset<int>(array, valueByteOffset);
             byteOffsetValueRef = 17;
 
             Assert.True(Unsafe.AreSame(ref valueRef, ref byteOffsetValueRef));

@@ -15,7 +15,7 @@ namespace DotNetCross.Memory
         // DotNetCross.Memory.Unsafe specific methods 
         // not found in corefx Unsafe currently
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ref T AsRefAtByteOffset<T>(object source, System.IntPtr byteoffset) { throw null; }
+        public unsafe static ref T RefAtByteOffset<T>(object source, System.IntPtr byteoffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static System.IntPtr ByteOffset<T>(object origin, ref T target) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
