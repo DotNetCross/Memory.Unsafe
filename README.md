@@ -1,11 +1,10 @@
 # Memory.Unsafe
 Unsafe methods for working with pointers and unmanaged memory in a completely generic, not-type-safe way.
 
-## Gitter
-[![Join the chat at https://gitter.im/DotNetCross/Memory.Unsafe](https://badges.gitter.im/DotNetCross/Memory.Unsafe.svg)](https://gitter.im/DotNetCross/Memory.Unsafe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 ## NuGet
 The current NuGet package name is `DotNetCross.Memory.Unsafe`. It can be found here:
+
+[![NuGet version (DotNetCross.Memory.Unsafe)](https://img.shields.io/nuget/v/DotNetCross.Memory.Unsafe.svg?style=flat-square)](https://www.nuget.org/packages/DotNetCross.Memory.Unsafe/)
 
 https://www.nuget.org/packages/DotNetCross.Memory.Unsafe
 
@@ -20,24 +19,7 @@ https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/
 If in doubt, use this official package.
 
 ## API
-API surface currently, no doubt this will change until a stable API has been determined.
-```csharp
-public static class Unsafe
-{
-    public static unsafe T Read<T>(void* p)
-    public static unsafe void Write<T>(void* p, T value)
-    public static unsafe void Write<T>(void* p, ref T value)
-    public static unsafe int SizeOf<T>()
-    public static T As<T>(object obj)
-    public static unsafe void* AsPointer<T>(ref T value)
-    public static unsafe void InitBlock(void* dst, byte initValue, uint size)
-    public static unsafe void CopyBlock(void* dst, void* src, uint size)
-}
-public class Pinnable
-{
-    public byte Pin;
-}
-```
+API surface can be see in [src\DotNetCross.Memory.Unsafe.Ref\Unsafe.cs](src\DotNetCross.Memory.Unsafe.Ref\Unsafe.cs).
 
 ## Examples
 ### Read
