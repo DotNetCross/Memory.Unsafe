@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>DotNetCross.Memory.Unsafe</id>
-    <version>0.3.0.0-preview01</version>
+    <version>0.3.0-preview02</version>
     <authors>nietras</authors>
     <owners>nietras</owners>
     <license type="expression">MIT</license>
