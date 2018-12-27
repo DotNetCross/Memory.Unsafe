@@ -15,21 +15,21 @@ namespace DotNetCross.Memory
         // DotNetCross.Memory.Unsafe specific methods 
         // not found in corefx Unsafe currently
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static ref T RefAtByteOffset<T>(object source, System.IntPtr byteoffset) { throw null; }
+        public unsafe static ref T RefAtByteOffset<T>(object source, IntPtr byteoffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static System.IntPtr ByteOffset<T>(object origin, ref T target) { throw null; }
+        public static IntPtr ByteOffset<T>(object origin, ref T target) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void Write<T>(void* destination, ref T value) { }
 
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ref T AddByteOffset<T>(ref T source, System.IntPtr byteOffset) { throw null; }
+        public static ref T AddByteOffset<T>(ref T source, IntPtr byteOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref T Add<T>(ref T source, int elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void* Add<T>(void* source, int elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ref T Add<T>(ref T source, System.IntPtr elementOffset) { throw null; }
+        public static ref T Add<T>(ref T source, IntPtr elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool AreSame<T>(ref T left, ref T right) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,7 +43,7 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref TTo As<TFrom, TTo>(ref TFrom source) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static System.IntPtr ByteOffset<T>(ref T origin, ref T target) { throw null; }
+        public static IntPtr ByteOffset<T>(ref T origin, ref T target) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void CopyBlock(ref byte destination, ref byte source, uint byteCount) { }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -77,13 +77,13 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int SizeOf<T>() { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ref T SubtractByteOffset<T>(ref T source, System.IntPtr byteOffset) { throw null; }
+        public static ref T SubtractByteOffset<T>(ref T source, IntPtr byteOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref T Subtract<T>(ref T source, int elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public unsafe static void* Subtract<T>(void* source, int elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ref T Subtract<T>(ref T source, System.IntPtr elementOffset) { throw null; }
+        public static ref T Subtract<T>(ref T source, IntPtr elementOffset) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ref T Unbox<T>(object box) where T : struct { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
