@@ -62,10 +62,6 @@
       ldloc.0     // load the object pointer as a byref
       ldarg.1     // load the offset
       add         // add the offset
-      //ldobj !!T   // load a T value from the computed address
-      // Roundtrip via a local to avoid type mismatch on return that the JIT inliner chokes on.
-      //stloc.0
-      //ldloc.0
       ret
   }
 

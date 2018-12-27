@@ -38,5 +38,18 @@ namespace DotNetCross.Memory.Tests
             Assert.True(Unsafe.AreSame(ref valueRef, ref byteOffsetValueRef));
             Assert.Equal(17, array[2]);
         }
+
+        [Fact]
+        public static unsafe void ByteOffset_Array_ElementOffsets()
+        {
+            var array = new byte[] { 0, 1, 2 };
+
+            var valueByteOffset0 = Unsafe.ByteOffset(array, ref array[0]);
+            var valueByteOffset2 = Unsafe.ByteOffset(array, ref array[2]);
+            var diff = (long)valueByteOffset2 - (long)valueByteOffset0;
+
+            Assert.Equal(new IntPtr(sizeof(IntPtr) * 2), valueByteOffset0);
+            Assert.Equal(2L, diff);
+        }
     }
 }

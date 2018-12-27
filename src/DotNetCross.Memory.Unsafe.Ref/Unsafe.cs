@@ -19,7 +19,7 @@ namespace DotNetCross.Memory
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IntPtr ByteOffset<T>(object origin, ref T target) { throw null; }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public unsafe static void Write<T>(void* destination, ref T value) { }
+        public unsafe static void Write<T>(void* destination, in T value) { }
 
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
