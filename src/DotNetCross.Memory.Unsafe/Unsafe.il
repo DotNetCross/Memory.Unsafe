@@ -82,12 +82,6 @@
                                                  !!T& 'value') cil managed aggressiveinlining
   {
       .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
-      .param [1]
-#ifdef netcoreapp
-      .custom instance void [CORE_ASSEMBLY]System.Runtime.CompilerServices.IsReadOnlyAttribute::.ctor() = ( 01 00 00 00 )
-#else
-      .custom instance void System.Runtime.CompilerServices.IsReadOnlyAttribute::.ctor() = ( 01 00 00 00 )
-#endif
       .maxstack  2
       ldarg.0
       ldarg.1
