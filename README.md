@@ -19,7 +19,7 @@ https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/
 If in doubt, use this official package.
 
 ## API
-API surface can be see in [src\DotNetCross.Memory.Unsafe.Ref\Unsafe.cs](src\DotNetCross.Memory.Unsafe.Ref\Unsafe.cs).
+API surface can be see in [src/DotNetCross.Memory.Unsafe.Ref/Unsafe.cs](src/DotNetCross.Memory.Unsafe.Ref/Unsafe.cs).
 
 ## Examples
 ### Read
