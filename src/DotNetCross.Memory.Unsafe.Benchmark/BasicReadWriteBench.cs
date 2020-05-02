@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using BenchmarkDotNet;
 using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Engines;
+using BenchmarkDotNet.Jobs;
 using DotNetCross.Memory;
 
 
@@ -11,7 +13,10 @@ namespace DotNetCross.Memory.Benchmark
 {
     public struct Bgr { public byte B; public byte G; public byte R; }
 
-    [LegacyJitX86Job, LegacyJitX64Job, RyuJitX64Job]
+    //[SimpleJob(RuntimeMoniker.Net461, warmupCount: 2, targetCount: 11, baseline: true)]
+    //[SimpleJob(RuntimeMoniker.NetCoreApp21, warmupCount: 2, targetCount: 11)]
+    //[SimpleJob(RuntimeMoniker.NetCoreApp31, warmupCount: 2, targetCount: 11)]
+    //[LegacyJitX86Job, LegacyJitX64Job, RyuJitX86Job, RyuJitX64Job]
     public class BasicReadWriteBench<T>
         where T : struct
     {
