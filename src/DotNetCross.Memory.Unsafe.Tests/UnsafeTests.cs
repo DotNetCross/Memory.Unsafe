@@ -884,9 +884,14 @@ namespace DotNetCross.Memory.Tests
             var aligned = new Int32Double { Int32 = i, Double = d };
             var unaligned = new byte[sizeof(Int32Double) + 1];
 
-            fixed (byte* p = unaligned)
+            fixed (byte* dst = unaligned)
             {
-                Buffer.MemoryCopy(&aligned, p + 1, sizeof(Int32Double), sizeof(Int32Double));
+                byte* src = (byte*)&aligned;
+                for (int j = 0; j < sizeof(Int32Double); j++)
+                {
+                    dst[j + 1] = src[j];
+                }
+                //Buffer.MemoryCopy(src, dst + 1, sizeof(Int32Double), sizeof(Int32Double));
             }
 
             return unaligned;
@@ -896,9 +901,14 @@ namespace DotNetCross.Memory.Tests
         {
             var aligned = new Int32Double();
 
-            fixed (byte* p = unaligned)
+            fixed (byte* src = unaligned)
             {
-                Buffer.MemoryCopy(p + 1, &aligned, sizeof(Int32Double), sizeof(Int32Double));
+                byte* dst = (byte*)&aligned;
+                for (int i = 0; i < sizeof(Int32Double); i++)
+                {
+                    dst[i] = src[i + 1];
+                }
+                //Buffer.MemoryCopy(src + 1, dst, sizeof(Int32Double), sizeof(Int32Double));
             }
 
             return aligned;
