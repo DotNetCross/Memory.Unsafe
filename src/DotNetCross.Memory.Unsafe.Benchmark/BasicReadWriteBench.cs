@@ -12,7 +12,7 @@ namespace DotNetCross.Memory.Benchmark
     public struct Bgr { public byte B; public byte G; public byte R; }
 
     [LegacyJitX86Job, LegacyJitX64Job, RyuJitX64Job]
-    public class BasicReadWriteBenchmark<T>
+    public class BasicReadWriteBench<T>
         where T : struct
     {
 
@@ -52,8 +52,8 @@ namespace DotNetCross.Memory.Benchmark
         }
     }
 
-    public class BasicReadWriteBenchmarkByte : BasicReadWriteBenchmark<byte> { }
-    public class BasicReadWriteBenchmarkShort : BasicReadWriteBenchmark<short> { }
-    public class BasicReadWriteBenchmarkInt : BasicReadWriteBenchmark<int> { }
-    public class BasicReadWriteBenchmarkBgr : BasicReadWriteBenchmark<Bgr> { }
+    public class BasicReadWriteBenchmarkByte : BasicReadWriteBench<byte> { }
+    public class BasicReadWriteBenchmarkShort : BasicReadWriteBench<short> { }
+    public class BasicReadWriteBenchmarkInt : BasicReadWriteBench<int> { }
+    public class BasicReadWriteBenchmarkBgr : BasicReadWriteBench<Bgr> { }
 }
