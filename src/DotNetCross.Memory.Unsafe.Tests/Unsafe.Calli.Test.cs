@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -121,15 +122,30 @@ namespace DotNetCross.Memory.Tests
         {
             IntPtr functionPointer = GetFunctionPointerCompAsIComparable();
 
+            var paramType = typeof(Comp);
+            var comparableType = typeof(IComparable<Comp>);
+            const string methodName = nameof(IComparable<Comp>.CompareTo);
+            var methodInfo = comparableType.GetRuntimeMethod(methodName, new Type[] { paramType });
+
+            // Doesn't work
+            //var comparison = (ComparisonComp)Marshal.GetDelegateForFunctionPointer(functionPointer, typeof(ComparisonComp));
+
+            var comparison = (Comparison<Comp>)methodInfo.CreateDelegate(typeof(Comparison<Comp>));
+            // Doesn't work
+            //var delegateFunctionPointer = comparison.Method.MethodHandle.GetFunctionPointer();
+
+
             Assert.NotEqual(IntPtr.Zero, functionPointer);
+            //Assert.NotEqual(delegateFunctionPointer, functionPointer);
             var x = new Comp(123);
             var y = new Comp(456);
-            // https://books.google.dk/books?id=g8gJKBedykUC&pg=PA94&lpg=PA94&dq=%22calli+instance%22&source=bl&ots=0s-_AUQ3Q7&sig=ACfU3U3vR0s_EcLkpnufJhNclObbEzqepQ&hl=en&sa=X&ved=2ahUKEwjG55Xo1JrpAhWyyKYKHeoRAhEQ6AEwAHoECAoQAQ#v=onepage&q=%22calli%20instance%22&f=false
-            // https://books.google.dk/books?id=Kl1DVZ8wTqcC&pg=PA176&lpg=PA176&dq=GetFunctionPointer+member+for+calli&source=bl&ots=5d6TFzRKSN&sig=ACfU3U3YEfMLCs6og9GlNKqZQmvvMspDBA&hl=en&sa=X&ved=2ahUKEwjFwZ3r1prpAhXvpIsKHRPPCbUQ6AEwAHoECAoQAQ#v=onepage&q=GetFunctionPointer%20member%20for%20calli&f=false
-            // https://github.com/icsharpcode/ILSpy-tests/blob/master/Mono.Cecil-net45/Resources/il/explicitthis.il
-            var result = Unsafe.Calli_Instance_Func<Comp, Comp, int>(functionPointer, x, y);
-            output.WriteLine(nameof(UNSAFE_CALLI_RESULT) + " " + result);
-            Assert.Equal(1, result);
+            //// https://books.google.dk/books?id=g8gJKBedykUC&pg=PA94&lpg=PA94&dq=%22calli+instance%22&source=bl&ots=0s-_AUQ3Q7&sig=ACfU3U3vR0s_EcLkpnufJhNclObbEzqepQ&hl=en&sa=X&ved=2ahUKEwjG55Xo1JrpAhWyyKYKHeoRAhEQ6AEwAHoECAoQAQ#v=onepage&q=%22calli%20instance%22&f=false
+            //// https://books.google.dk/books?id=Kl1DVZ8wTqcC&pg=PA176&lpg=PA176&dq=GetFunctionPointer+member+for+calli&source=bl&ots=5d6TFzRKSN&sig=ACfU3U3YEfMLCs6og9GlNKqZQmvvMspDBA&hl=en&sa=X&ved=2ahUKEwjFwZ3r1prpAhXvpIsKHRPPCbUQ6AEwAHoECAoQAQ#v=onepage&q=GetFunctionPointer%20member%20for%20calli&f=false
+            //// https://github.com/icsharpcode/ILSpy-tests/blob/master/Mono.Cecil-net45/Resources/il/explicitthis.il
+            //var result = Unsafe.Calli_Instance_Func<Comp, Comp, int>(functionPointer, x, y);
+            var result = comparison(x, y);
+            //output.WriteLine(nameof(UNSAFE_CALLI_RESULT) + " " + result);
+            Assert.Equal(-1, result);
         }
 
         private static unsafe IntPtr GetFunctionPointerCompAsIComparable()
