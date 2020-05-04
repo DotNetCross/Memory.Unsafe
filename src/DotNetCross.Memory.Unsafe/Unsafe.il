@@ -499,11 +499,36 @@
    .method public hidebysig static !!TResult Calli_Instance_Func<T1,T2,TResult>(native int functionPtr, !!T1 t1, !!T2 t2) cil managed aggressiveinlining
    {
         .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+        .locals init (method instance !!TResult *(!!T1, !!T2) m)
+        .maxstack  8
+        ldarg.0
+        stloc m
+        ldarg.1
+        ldarg.2
+        ldloc m
+        calli instance !!TResult (!!T2)
+        ret
+   }
+
+   .method public hidebysig static native int Calli_Instance_Func_Store<T1,T2,TResult>(native int functionPtr) cil managed aggressiveinlining
+   {
+        .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+        .locals init (method instance !!TResult *(!!T1, !!T2) m)
+        .maxstack  8
+        ldarg.0
+        stloc m
+        ldarg.0
+        ret
+    }
+
+   .method public hidebysig static !!TResult Calli_Instance_Func_Test<T1,T2,TResult>(method instance explicit !!TResult *(!!T1, !!T2) m, !!T1 t1, !!T2 t2) cil managed aggressiveinlining
+   {
+        .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
         .maxstack  8
         ldarg.1
         ldarg.2
         ldarg.0
-        calli instance !!TResult (!!T1, !!T2)
+        calli instance !!TResult (!!T2)
         ret
    }
 

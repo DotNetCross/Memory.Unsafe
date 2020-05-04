@@ -142,10 +142,20 @@ namespace DotNetCross.Memory.Tests
             //// https://books.google.dk/books?id=g8gJKBedykUC&pg=PA94&lpg=PA94&dq=%22calli+instance%22&source=bl&ots=0s-_AUQ3Q7&sig=ACfU3U3vR0s_EcLkpnufJhNclObbEzqepQ&hl=en&sa=X&ved=2ahUKEwjG55Xo1JrpAhWyyKYKHeoRAhEQ6AEwAHoECAoQAQ#v=onepage&q=%22calli%20instance%22&f=false
             //// https://books.google.dk/books?id=Kl1DVZ8wTqcC&pg=PA176&lpg=PA176&dq=GetFunctionPointer+member+for+calli&source=bl&ots=5d6TFzRKSN&sig=ACfU3U3YEfMLCs6og9GlNKqZQmvvMspDBA&hl=en&sa=X&ved=2ahUKEwjFwZ3r1prpAhXvpIsKHRPPCbUQ6AEwAHoECAoQAQ#v=onepage&q=GetFunctionPointer%20member%20for%20calli&f=false
             //// https://github.com/icsharpcode/ILSpy-tests/blob/master/Mono.Cecil-net45/Resources/il/explicitthis.il
+            // .locals init (class MakeDecision d, method instance explicit int32 *(class MakeDecision, int32) m,
+
             //var result = Unsafe.Calli_Instance_Func<Comp, Comp, int>(functionPointer, x, y);
             var result = comparison(x, y);
             //output.WriteLine(nameof(UNSAFE_CALLI_RESULT) + " " + result);
             Assert.Equal(-1, result);
+        }
+
+        [Fact]
+        public unsafe void Calli_Instance_Func_Store_Test()
+        {
+            IntPtr functionPointer = GetFunctionPointerCompAsIComparable();
+            var ip = Unsafe.Calli_Instance_Func_Store<Comp, Comp, int>(functionPointer);
+            Assert.Equal(functionPointer, ip);
         }
 
         private static unsafe IntPtr GetFunctionPointerCompAsIComparable()
