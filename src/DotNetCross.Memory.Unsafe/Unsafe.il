@@ -485,6 +485,17 @@
         ret 
   } // end of method Unsafe::IsAddressLessThan
 
+   .method public hidebysig static !!TResult Calli_Managed_Func<T1,T2,TResult>(native int functionPtr, !!T1 t1, !!T2 t2) cil managed aggressiveinlining
+   {
+        .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+        .maxstack  8
+        ldarg.1
+        ldarg.2
+        ldarg.0
+        calli !!TResult (!!T1, !!T2)
+        ret
+   }
+
 } // end of class DotNetCross.Memory.Unsafe
 
 .class public auto ansi sealed beforefieldinit DotNetCross.Memory.Pinnable

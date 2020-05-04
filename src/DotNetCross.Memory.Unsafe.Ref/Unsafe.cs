@@ -92,6 +92,9 @@ namespace DotNetCross.Memory
         public unsafe static void WriteUnaligned<T>(void* destination, T value) { }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void WriteUnaligned<T>(ref byte destination, T value) { }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static TResult Calli_Managed_Func<T1, T2, TResult>(T1 t1, T2 t2) { throw null; }
     }
 
     public sealed class Pinnable
