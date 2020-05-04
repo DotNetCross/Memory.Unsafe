@@ -485,7 +485,7 @@
         ret 
   } // end of method Unsafe::IsAddressLessThan
 
-   .method public hidebysig static !!TResult Calli_Managed_Func<T1,T2,TResult>(native int functionPtr, !!T1 t1, !!T2 t2) cil managed aggressiveinlining
+   .method public hidebysig static !!TResult Calli_Func<T1,T2,TResult>(native int functionPtr, !!T1 t1, !!T2 t2) cil managed aggressiveinlining
    {
         .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
         .maxstack  8
@@ -493,6 +493,17 @@
         ldarg.2
         ldarg.0
         calli !!TResult (!!T1, !!T2)
+        ret
+   }
+
+   .method public hidebysig static !!TResult Calli_Instance_Func<T1,T2,TResult>(native int functionPtr, !!T1 t1, !!T2 t2) cil managed aggressiveinlining
+   {
+        .custom instance void System.Runtime.Versioning.NonVersionableAttribute::.ctor() = ( 01 00 00 00 )
+        .maxstack  8
+        ldarg.1
+        ldarg.2
+        ldarg.0
+        calli instance !!TResult (!!T1, !!T2)
         ret
    }
 

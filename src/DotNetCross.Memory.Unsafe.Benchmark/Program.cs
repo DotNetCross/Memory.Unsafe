@@ -11,6 +11,9 @@ namespace DotNetCross.Memory.Benchmark
     {
         static void Main(string[] args)
         {
+            Test.Example.Test();
+            return;
+
             Func<Job> baseJob = () => Job.Default;
             var iterationTime = new TimeInterval(50, TimeUnit.Millisecond);
             var runtimes = new Runtime[] { CoreRuntime.Core21, CoreRuntime.Core31, ClrRuntime.Net461 };
