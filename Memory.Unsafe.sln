@@ -30,6 +30,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src-pack", "src-pack", "{4B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe.Benchmark", "src\DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Unsafe.Benchmark.csproj", "{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src-runtime-ref", "src-runtime-ref", "{68757069-BE8C-4949-9F78-5AA7D9516A61}"
+	ProjectSection(SolutionItems) = preProject
+		src-runtime-ref\System.Runtime.CompilerServices.Unsafe.il = src-runtime-ref\System.Runtime.CompilerServices.Unsafe.il
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

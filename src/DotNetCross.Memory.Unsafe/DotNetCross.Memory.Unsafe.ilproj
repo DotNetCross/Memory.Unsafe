@@ -7,7 +7,6 @@
   </PropertyGroup>
   
   <PropertyGroup>
-    <NoWarn>NETSDK1138</NoWarn>
     <TargetFrameworks>netcoreapp2.0;netstandard2.0;netstandard1.0;net45</TargetFrameworks>
     
     <IncludePath>version-$(TargetFramework)</IncludePath>
