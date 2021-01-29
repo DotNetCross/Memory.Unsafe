@@ -1,6 +1,5 @@
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-// See the LICENSE file in the project root for more information.
 
 using System;
 using System.Collections.Generic;
@@ -130,31 +129,22 @@ namespace DotNetCross.Memory.Tests
             Assert.Equal(10, value);
         }
 
-#pragma warning disable xUnit1026
-        [Theory]
-        [MemberData(nameof(SizeOfData))]
-        public static unsafe void SizeOf<T>(int expected, T valueUnused)
+        [Fact]
+        public static unsafe void SizeOf()
         {
-            // valueUnused is only present to enable Xunit to call the correct generic overload.
-            Assert.Equal(expected, Unsafe.SizeOf<T>());
-        }
-#pragma warning restore xUnit1026
-
-        public static IEnumerable<object[]> SizeOfData()
-        {
-            yield return new object[] { 1, new sbyte() };
-            yield return new object[] { 1, new byte() };
-            yield return new object[] { 2, new short() };
-            yield return new object[] { 2, new ushort() };
-            yield return new object[] { 4, new int() };
-            yield return new object[] { 4, new uint() };
-            yield return new object[] { 8, new long() };
-            yield return new object[] { 8, new ulong() };
-            yield return new object[] { 4, new float() };
-            yield return new object[] { 8, new double() };
-            yield return new object[] { 4, new Byte4() };
-            yield return new object[] { 8, new Byte4Short2() };
-            yield return new object[] { 512, new Byte512() };
+            Assert.Equal(1, Unsafe.SizeOf<sbyte>());
+            Assert.Equal(1, Unsafe.SizeOf<byte>());
+            Assert.Equal(2, Unsafe.SizeOf<short>());
+            Assert.Equal(2, Unsafe.SizeOf<ushort>());
+            Assert.Equal(4, Unsafe.SizeOf<int>());
+            Assert.Equal(4, Unsafe.SizeOf<uint>());
+            Assert.Equal(8, Unsafe.SizeOf<long>());
+            Assert.Equal(8, Unsafe.SizeOf<ulong>());
+            Assert.Equal(4, Unsafe.SizeOf<float>());
+            Assert.Equal(8, Unsafe.SizeOf<double>());
+            Assert.Equal(4, Unsafe.SizeOf<Byte4>());
+            Assert.Equal(8, Unsafe.SizeOf<Byte4Short2>());
+            Assert.Equal(512, Unsafe.SizeOf<Byte512>());
         }
 
         [Theory]
@@ -381,15 +371,13 @@ namespace DotNetCross.Memory.Tests
             Assert.Equal("Hello", Unsafe.As<string>(o));
         }
 
-#pragma warning disable xUnit2007
         [Fact]
         public static void DangerousAs()
         {
             // Verify that As does not perform type checks
             object o = new object();
-            Assert.IsType(typeof(object), Unsafe.As<string>(o));
+            Assert.IsType<object>(Unsafe.As<string>(o));
         }
-#pragma warning restore xUnit2007
 
         [Fact]
         public static void ByteOffsetArray()
@@ -407,7 +395,7 @@ namespace DotNetCross.Memory.Tests
             Assert.Equal(new IntPtr(6), Unsafe.ByteOffset(ref a[0], ref a[6]));
             Assert.Equal(new IntPtr(7), Unsafe.ByteOffset(ref a[0], ref a[7]));
         }
-        
+
         [Fact]
         public static void ByteOffsetStackByte4()
         {
@@ -426,7 +414,7 @@ namespace DotNetCross.Memory.Tests
         public static unsafe void AsRef()
         {
             byte[] b = new byte[4] { 0x42, 0x42, 0x42, 0x42 };
-            fixed (byte * p = b)
+            fixed (byte* p = b)
             {
                 ref int r = ref Unsafe.AsRef<int>(p);
                 Assert.Equal(0x42424242, r);
@@ -518,6 +506,18 @@ namespace DotNetCross.Memory.Tests
         }
 
         [Fact]
+        public static void RefAddNuint()
+        {
+            int[] a = new int[] { 0x123, 0x234, 0x345, 0x456 };
+
+            ref int r1 = ref Unsafe.Add(ref a[0], (nuint)1);
+            Assert.Equal(0x234, r1);
+
+            ref int r2 = ref Unsafe.Add(ref r1, (nuint)2);
+            Assert.Equal(0x456, r2);
+        }
+
+        [Fact]
         public static void RefAddByteOffset()
         {
             byte[] a = new byte[] { 0x12, 0x34, 0x56, 0x78 };
@@ -530,6 +530,18 @@ namespace DotNetCross.Memory.Tests
 
             ref byte r3 = ref Unsafe.AddByteOffset(ref r2, (IntPtr)(-3));
             Assert.Equal(0x12, r3);
+        }
+
+        [Fact]
+        public static void RefAddNuintByteOffset()
+        {
+            byte[] a = new byte[] { 0x12, 0x34, 0x56, 0x78 };
+
+            ref byte r1 = ref Unsafe.AddByteOffset(ref a[0], (nuint)1);
+            Assert.Equal(0x34, r1);
+
+            ref byte r2 = ref Unsafe.AddByteOffset(ref r1, (nuint)2);
+            Assert.Equal(0x78, r2);
         }
 
         [Fact]
@@ -546,7 +558,7 @@ namespace DotNetCross.Memory.Tests
             ref string r3 = ref Unsafe.Subtract(ref r2, 3);
             Assert.Equal("abc", r3);
         }
-        
+
         [Fact]
         public static unsafe void VoidPointerSubtract()
         {
@@ -590,6 +602,15 @@ namespace DotNetCross.Memory.Tests
         }
 
         [Fact]
+        public static void RefSubtractNuint()
+        {
+            string[] a = new string[] { "abc", "def", "ghi", "jkl" };
+
+            ref string r3 = ref Unsafe.Subtract(ref a[3], (nuint)3);
+            Assert.Equal("abc", r3);
+        }
+
+        [Fact]
         public static void RefSubtractByteOffset()
         {
             byte[] a = new byte[] { 0x12, 0x34, 0x56, 0x78 };
@@ -601,6 +622,15 @@ namespace DotNetCross.Memory.Tests
             Assert.Equal(0x78, r2);
 
             ref byte r3 = ref Unsafe.SubtractByteOffset(ref r2, (IntPtr)3);
+            Assert.Equal(0x12, r3);
+        }
+
+        [Fact]
+        public static void RefSubtractNuintByteOffset()
+        {
+            byte[] a = new byte[] { 0x12, 0x34, 0x56, 0x78 };
+
+            ref byte r3 = ref Unsafe.SubtractByteOffset(ref a[3], (nuint)3);
             Assert.Equal(0x12, r3);
         }
 
@@ -834,6 +864,194 @@ namespace DotNetCross.Memory.Tests
 
             Assert.Throws<InvalidCastException>(() => Unsafe.Unbox<bool>(box));
         }
+
+        [Fact]
+        public static void SkipInit()
+        {
+            // Validate that calling with primitive types works.
+
+            Unsafe.SkipInit(out sbyte sbyteValue);
+            Unsafe.SkipInit(out byte byteValue);
+            Unsafe.SkipInit(out short shortValue);
+            Unsafe.SkipInit(out ushort ushortValue);
+            Unsafe.SkipInit(out int intValue);
+            Unsafe.SkipInit(out uint uintValue);
+            Unsafe.SkipInit(out long longValue);
+            Unsafe.SkipInit(out ulong ulongValue);
+            Unsafe.SkipInit(out float floatValue);
+            Unsafe.SkipInit(out double doubleValue);
+
+            // Validate that calling on user-defined unmanaged structs works.
+
+            Unsafe.SkipInit(out Byte4 byte4Value);
+            Unsafe.SkipInit(out Byte4Short2 byte4Short2Value);
+            Unsafe.SkipInit(out Byte512 byte512Value);
+            Unsafe.SkipInit(out Int32Double int32DoubleValue);
+
+            // Validates that calling on a struct works and the reference type is still zeroed.
+
+            Unsafe.SkipInit(out StringInt32 stringInt32Value);
+            Assert.Null(stringInt32Value.String);
+
+            // Validates that calling on a reference type works and it is zeroed.
+
+            Unsafe.SkipInit(out string stringValue);
+            Assert.Null(stringValue);
+        }
+
+        [Fact]
+        public static void SkipInit_PreservesPrevious()
+        {
+            // Validate that calling on already initialized types preserves the previous value.
+
+            sbyte sbyteValue = 1;
+            Unsafe.SkipInit(out sbyteValue);
+            Assert.Equal<sbyte>(1, sbyteValue);
+
+            byte byteValue = 2;
+            Unsafe.SkipInit(out byteValue);
+            Assert.Equal<byte>(2, byteValue);
+
+            short shortValue = 3;
+            Unsafe.SkipInit(out shortValue);
+            Assert.Equal<short>(3, shortValue);
+
+            ushort ushortValue = 4;
+            Unsafe.SkipInit(out ushortValue);
+            Assert.Equal<ushort>(4, ushortValue);
+
+            int intValue = 5;
+            Unsafe.SkipInit(out intValue);
+            Assert.Equal<int>(5, intValue);
+
+            uint uintValue = 6;
+            Unsafe.SkipInit(out uintValue);
+            Assert.Equal<uint>(6, uintValue);
+
+            long longValue = 7;
+            Unsafe.SkipInit(out longValue);
+            Assert.Equal<long>(7, longValue);
+
+            ulong ulongValue = 8;
+            Unsafe.SkipInit(out ulongValue);
+            Assert.Equal<ulong>(8, ulongValue);
+
+            float floatValue = 9;
+            Unsafe.SkipInit(out floatValue);
+            Assert.Equal<float>(9, floatValue);
+
+            double doubleValue = 10;
+            Unsafe.SkipInit(out doubleValue);
+            Assert.Equal<double>(10, doubleValue);
+
+            Byte4 byte4Value = new Byte4 { B0 = 11, B1 = 12, B2 = 13, B3 = 14 };
+            Unsafe.SkipInit(out byte4Value);
+            Assert.Equal<byte>(11, byte4Value.B0);
+            Assert.Equal<byte>(12, byte4Value.B1);
+            Assert.Equal<byte>(13, byte4Value.B2);
+            Assert.Equal<byte>(14, byte4Value.B3);
+
+            Byte4Short2 byte4Short2Value = new Byte4Short2 { B0 = 15, B1 = 16, B2 = 17, B3 = 18, S4 = 19, S6 = 20 };
+            Unsafe.SkipInit(out byte4Short2Value);
+            Assert.Equal<byte>(15, byte4Short2Value.B0);
+            Assert.Equal<byte>(16, byte4Short2Value.B1);
+            Assert.Equal<byte>(17, byte4Short2Value.B2);
+            Assert.Equal<byte>(18, byte4Short2Value.B3);
+            Assert.Equal<short>(19, byte4Short2Value.S4);
+            Assert.Equal<short>(20, byte4Short2Value.S6);
+
+            Int32Double int32DoubleValue = new Int32Double { Int32 = 21, Double = 22 };
+            Unsafe.SkipInit(out int32DoubleValue);
+            Assert.Equal<int>(21, int32DoubleValue.Int32);
+            Assert.Equal<double>(22, int32DoubleValue.Double);
+
+            StringInt32 stringInt32Value = new StringInt32 { String = "23", Int32 = 24 };
+            Unsafe.SkipInit(out stringInt32Value);
+            Assert.Equal("23", stringInt32Value.String);
+            Assert.Equal<int>(24, stringInt32Value.Int32);
+
+            string stringValue = "25";
+            Unsafe.SkipInit(out stringValue);
+            Assert.Equal("25", stringValue);
+        }
+
+        [Fact]
+        public static unsafe void IsNullRef_NotNull()
+        {
+            // Validate that calling with a primitive type works.
+
+            int intValue = 5;
+            Assert.False(Unsafe.IsNullRef<int>(ref intValue));
+
+            // Validate that calling on user-defined unmanaged structs works.
+
+            Int32Double int32DoubleValue = default;
+            Assert.False(Unsafe.IsNullRef<Int32Double>(ref int32DoubleValue));
+
+            // Validate that calling on reference types works.
+
+            object objectValue = new object();
+            Assert.False(Unsafe.IsNullRef<object>(ref objectValue));
+
+            string stringValue = nameof(IsNullRef_NotNull);
+            Assert.False(Unsafe.IsNullRef<string>(ref stringValue));
+
+            // Validate on ref created from a pointer
+
+            int* p = (int*)1;
+            Assert.False(Unsafe.IsNullRef<int>(ref Unsafe.AsRef<int>(p)));
+        }
+
+        [Fact]
+        public static unsafe void IsNullRef_Null()
+        {
+            // Validate that calling with a primitive type works.
+
+            Assert.True(Unsafe.IsNullRef<int>(ref Unsafe.AsRef<int>(null)));
+
+            // Validate that calling on user-defined unmanaged structs works.
+
+            Assert.True(Unsafe.IsNullRef<Int32Double>(ref Unsafe.AsRef<Int32Double>(null)));
+
+            // Validate that calling on reference types works.
+
+            Assert.True(Unsafe.IsNullRef<object>(ref Unsafe.AsRef<object>(null)));
+            Assert.True(Unsafe.IsNullRef<string>(ref Unsafe.AsRef<string>(null)));
+
+            // Validate on ref created from a pointer
+
+            int* p = (int*)0;
+            Assert.True(Unsafe.IsNullRef<int>(ref Unsafe.AsRef<int>(p)));
+        }
+
+        [Fact]
+        public static unsafe void NullRef()
+        {
+            // Validate that calling with a primitive type works.
+
+            Assert.True(Unsafe.IsNullRef<int>(ref Unsafe.NullRef<int>()));
+
+            // Validate that calling on user-defined unmanaged structs works.
+
+            Assert.True(Unsafe.IsNullRef<Int32Double>(ref Unsafe.NullRef<Int32Double>()));
+
+            // Validate that calling on reference types works.
+
+            Assert.True(Unsafe.IsNullRef<object>(ref Unsafe.NullRef<object>()));
+            Assert.True(Unsafe.IsNullRef<string>(ref Unsafe.NullRef<string>()));
+
+            // Validate that pinning results in a null pointer
+
+            fixed (void* p = &Unsafe.NullRef<int>())
+            {
+                Assert.True(p == (void*)0);
+            }
+
+            // Validate that dereferencing a null ref throws a NullReferenceException
+
+            Assert.Throws<NullReferenceException>(() => Unsafe.NullRef<int>() = 42);
+            Assert.Throws<NullReferenceException>(() => Unsafe.NullRef<int>());
+        }
     }
 
     [StructLayout(LayoutKind.Explicit)]
@@ -871,7 +1089,7 @@ namespace DotNetCross.Memory.Tests
         public fixed byte Bytes[512];
     }
 
-    [StructLayout(LayoutKind.Explicit, Size=16)]
+    [StructLayout(LayoutKind.Explicit, Size = 16)]
     public unsafe struct Int32Double
     {
         [FieldOffset(0)]
@@ -903,5 +1121,11 @@ namespace DotNetCross.Memory.Tests
 
             return aligned;
         }
+    }
+
+    public struct StringInt32
+    {
+        public string String;
+        public int Int32;
     }
 }

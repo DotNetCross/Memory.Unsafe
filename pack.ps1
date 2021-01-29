@@ -12,5 +12,8 @@ If (!(Test-Path $targetNugetExe))
    "Downloading nuget to: " + $targetNugetExe
    Invoke-WebRequest $sourceNugetExe -OutFile $targetNugetExe
 }
-xcopy /Y .\build\Libs_AnyCPU_Release\DotNetCross.Memory.Unsafe.dll .\src-pack\
+xcopy /Y .\src\DotNetCross.Memory.Unsafe\bin\Release\net45\*.dll .\src-pack\lib\net45\
+xcopy /Y .\src\DotNetCross.Memory.Unsafe\bin\Release\netstandard1.0\*.dll .\src-pack\lib\netstandard1.0\
+xcopy /Y .\src\DotNetCross.Memory.Unsafe\bin\Release\netstandard2.0\*.dll .\src-pack\lib\netstandard2.0\
+xcopy /Y .\src\DotNetCross.Memory.Unsafe\bin\Release\netcoreapp2.0\*.dll .\src-pack\lib\netcoreapp2.0\
 iex ($targetNugetExe + " pack .\src-pack\DotNetCross.Memory.Unsafe.nuspec")

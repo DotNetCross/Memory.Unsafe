@@ -1,12 +1,13 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{B29390E2-23E2-4B55-BF15-B35C730CB74C}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		all.ps1 = all.ps1
 		build.ps1 = build.ps1
+		global.json = global.json
 		ilasm.bat = ilasm.bat
 		ildasm.bat = ildasm.bat
 		LICENSE = LICENSE
@@ -17,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{B29390E2-2
 		test.ps1 = test.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Unsafe", "src\DotNetCross.Memory.Unsafe\DotNetCross.Memory.Unsafe.csproj", "{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe", "src\DotNetCross.Memory.Unsafe\DotNetCross.Memory.Unsafe.ilproj", "{32A475A2-AB30-4D72-B560-67FC6BB94D16}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe.Ref", "src\DotNetCross.Memory.Unsafe.Ref\DotNetCross.Memory.Unsafe.Ref.csproj", "{757DD645-B7ED-4DDA-8796-F228B0BB574D}"
 EndProject
@@ -28,7 +29,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src-pack", "src-pack", "{4B
 		src-pack\DotNetCross.Memory.Unsafe.nuspec = src-pack\DotNetCross.Memory.Unsafe.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCross.Memory.Unsafe.Benchmark", "src\DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Unsafe.Benchmark.csproj", "{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCross.Memory.Unsafe.Benchmark", "src\DotNetCross.Memory.Unsafe.Benchmark\DotNetCross.Memory.Unsafe.Benchmark.csproj", "{595ADAD7-8E3F-4A4F-883C-1CC5425902AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src-runtime-ref", "src-runtime-ref", "{68757069-BE8C-4949-9F78-5AA7D9516A61}"
+	ProjectSection(SolutionItems) = preProject
+		src-runtime-ref\System.Runtime.CompilerServices.Unsafe.il = src-runtime-ref\System.Runtime.CompilerServices.Unsafe.il
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,10 +42,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AE5D1B8-DCA8-4943-BFEA-3596F093E61C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32A475A2-AB30-4D72-B560-67FC6BB94D16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32A475A2-AB30-4D72-B560-67FC6BB94D16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32A475A2-AB30-4D72-B560-67FC6BB94D16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32A475A2-AB30-4D72-B560-67FC6BB94D16}.Release|Any CPU.Build.0 = Release|Any CPU
 		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{757DD645-B7ED-4DDA-8796-F228B0BB574D}.Release|Any CPU.ActiveCfg = Release|Any CPU

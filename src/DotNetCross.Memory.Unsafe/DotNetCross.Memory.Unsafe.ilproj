@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.IL">
+
+  <!-- Make sure that the DebuggableAttribute is set properly. -->
+  <PropertyGroup>
+    <DebugOptimization>IMPL</DebugOptimization>
+    <DebugOptimization Condition="'$(Configuration)' == 'Release'">OPT</DebugOptimization>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.0;netstandard2.0;netstandard1.0;net45</TargetFrameworks>
+    
+    <IncludePath>version-$(TargetFramework)</IncludePath>
+    <IlasmFlags>$(IlasmFlags) -INCLUDE=$(IncludePath)</IlasmFlags>
+    <!--Below warns with the folliwing, but cannot add option -PDBFMT=PORTABLE
+        EXEC : warning : Classic PDB format is not supported on CoreCLR.
+        Use '/PDBFMT=PORTABLE' option in order to generate portable PDB format.-->
+    <!--<IlasmFlags>$(IlasmFlags) -DEBUG=$(DebugOptimization) -INCLUDE=$(IncludePath)</IlasmFlags>-->
+    
+    <ExcludeCurrentNetCoreAppFromPackage>true</ExcludeCurrentNetCoreAppFromPackage>
+    
+    <CoreAssembly>System.Runtime</CoreAssembly>
+    <CoreAssembly Condition="'$(TargetFramework)' == 'netstandard2.0'">netstandard</CoreAssembly>
+    <CoreAssembly Condition="$(TargetFramework.StartsWith('net4'))">mscorlib</CoreAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- mscorlib is passed in as an explicit reference from C# targets but not via the IL SDK. -->
+    <Reference Include="$(CoreAssembly)"
+               Condition="!$(TargetFramework.StartsWith('netstandard'))" />
+  </ItemGroup>
+
+</Project>
