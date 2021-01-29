@@ -15,6 +15,10 @@ namespace DotNetCross.Memory.Tests
     // TODO: Rename
     public class Unsafe_Calli_Test
     {
+        // To get feedback on IL you can run PEVerify like:
+        // C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.8 Tools\x64> .\PEVerify.exe "C:\git\oss\Memory.Unsafe\build\Libs_AnyCPU_Debug\DotNetCross.Memory.Unsafe.dll"
+        // also see https://tooslowexception.com/net-jit-compiler-is-not-type-safe/
+
         private readonly ITestOutputHelper output;
 
         public Unsafe_Calli_Test(ITestOutputHelper output)
