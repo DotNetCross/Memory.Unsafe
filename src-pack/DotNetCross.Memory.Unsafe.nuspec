@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/DotNetCross/Memory.Unsafe</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Unsafe methods for working with pointers and unmanaged memory.</description>
-    <releaseNotes>Restructure.</releaseNotes>
+    <releaseNotes>Fix multi-targeting and bring up to speed with .NET 5 Unsafe functionality.</releaseNotes>
     <copyright>© nietras. All rights reserved.</copyright>
     <tags>unmanaged pointer pointers generic</tags>
     <dependencies>
