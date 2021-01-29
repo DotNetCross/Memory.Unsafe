@@ -1,1 +1,1 @@
-dotnet restore -v m
+dotnet restore -v m /nowarn:NETSDK1138
